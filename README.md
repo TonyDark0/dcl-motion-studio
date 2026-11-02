@@ -44,6 +44,22 @@ Follow these steps in order. **Installing npm packages alone does not enable gen
 
 ### 1. Open the project and check Node.js
 
+These detailed commands target **Windows x64 with PowerShell**. Keep the project in a normal writable folder, for example `C:\Projects\dcl-motion-studio`; do not install under Program Files or run commands inside the ZIP. The sample paths below are examples, not folders that already exist on your machine.
+
+If you do not have the tools yet:
+
+| Tool | Install / select | Used for |
+| --- | --- | --- |
+| Node.js and npm | [Official Node.js downloads](https://nodejs.org/en/download): select **24.x**, even if the page defaults to another major version. Use the Windows x64 installer and include npm/PATH. | Running the editor, API and setup scripts. |
+| Git | [Git for Windows](https://gitforwindows.org/): make Git available from the command line. | Cloning Studio and the native engine/submodules. Required for the native build even if you download Studio as a ZIP. |
+| CMake | [Official CMake downloads](https://cmake.org/download/): stable Windows x64 installer, version **3.25 or newer**, with its PATH option enabled. | Configuring the native engine. |
+| Ninja | [Official Ninja releases](https://github.com/ninja-build/ninja/releases): Windows x64 `ninja-win.zip`, extracted to a folder such as `C:\Tools\ninja`. | Building the native engine. |
+| LLVM-MinGW | [LLVM-MinGW 20260908](https://github.com/mstorsjo/llvm-mingw/releases/tag/20260908): Windows **UCRT x86_64** ZIP, extracted to a folder such as `C:\Tools\llvm-mingw-20260908-ucrt-x86_64`. Choose the binary archive, not Source code. | C/C++ compiler and matching runtime DLLs. |
+
+The LLVM-MinGW route matches the toolchain family used for this project's Windows engine. It does not mean that a complete clean engine build has been validated for every machine. Do not combine its DLLs with a binary built using another compiler. The CPU build below does not require a CUDA toolkit, Vulkan SDK or Pro's Python environment.
+
+After installing Node.js, Git and CMake, **close and reopen the terminal** so it sees their PATH entries. If you already have these tools, check their versions rather than reinstalling them. Downloading an archive alone does not put its programs on PATH.
+
 Clone the repository:
 
 ```sh
@@ -68,7 +84,7 @@ Use Node.js **24.x**. If `node` or `npm` is not recognized, install Node.js and 
 npm ci
 ```
 
-This installs the exact npm dependencies in `package-lock.json`. Wait for it to finish successfully before running the next command. It does not install the AI weights or compile the native engine.
+This installs the exact npm dependencies in `package-lock.json`. Keep Internet available; some packages also install native runtime components. Wait for it to finish successfully before running the next command. It does not install the AI weights or compile the native engine.
 
 **Expected:** npm finishes without an installation error and creates `node_modules/`. The presence of that folder alone does not prove installation completed. If it failed, resolve the reported error before continuing.
 
@@ -108,7 +124,7 @@ data/models/kimodo/tokenizer.gguf
 data/models/vision/rtmw3d.onnx
 ```
 
-The setup scripts verify downloads and reuse matching files. If a download fails, resolve the reported connection, disk-space or hash error, then rerun that setup command.
+The setup scripts verify downloads and reuse completed matching files. They do not currently display a percentage or resume a partly downloaded model: retrying restarts that incomplete file. In particular, the text encoder is about 5 GB, so a download can take a long time. If a download fails, resolve the reported connection, disk-space or hash error, then rerun that setup command. Do not rename a different checkpoint to match an expected filename.
 
 See [Models and runtimes](docs/MODELS_AND_RUNTIMES.md) for what each file does, CPU/GPU requirements, optional Pro dependencies and what is not included in the source package.
 
@@ -124,23 +140,64 @@ You can optionally [load a wallet avatar](docs/custom-avatar.md) for visualizati
 
 ### 5. Build and configure the native Kimodo engine
 
-Generation needs a separate **C++23 toolchain, Git, CMake and Ninja**. Follow [the native build guide](native/kimodo/README.md) for the exact upstream commit, patch and CPU build commands. The upstream engine source is not vendored into this repository.
+The engine is a separate program. `npm ci` and the model download commands do not compile it. Use the Windows x64 toolchain from step 1; the [native guide](native/kimodo/README.md) also explains the protocol and build troubleshooting.
 
-1. Obtain the pinned kimodo.cpp source and its submodules.
-2. Apply `native/kimodo/constraints.patch` from this repository.
-3. Build `kmd-generate` with the CPU options in the guide.
-4. Copy the executable and required shared libraries to `data/bin/kimodo-constraints/`.
-5. Run the executable with `--capabilities`. It must report `constraints: soma30-v1` and `protocol: C1`.
+**A. Make your extracted compiler and Ninja available in this terminal.** Run from the Studio folder containing `package.json`. Replace the two example paths with your actual extracted folders:
 
-On Windows, the expected executable location is:
-
-```text
-data/bin/kimodo-constraints/kmd-generate.exe
+```powershell
+$compilerRoot = 'C:\Tools\llvm-mingw-20260908-ucrt-x86_64'
+$ninjaRoot = 'C:\Tools\ninja'
+$env:Path = "$compilerRoot\bin;$ninjaRoot;$env:Path"
+git --version
+cmake --version
+ninja --version
+clang --version
+clang++ --version
 ```
 
-Keep its required DLLs beside it or on the library search path. An unpatched upstream executable does not provide Studio's video-conditioned generation and native loop workflow.
+Every version command must work. Check that `Get-Command clang++` points inside your selected LLVM-MinGW folder. These PATH changes apply only to this terminal and its child processes; repeat them if you open another terminal for a build. If a program is not found, correct its path before continuing.
 
-**Expected:** the capability command succeeds before you open Studio. If the executable cannot start, the editor cannot fix a missing compiler runtime or shared library. Resolve the native build first; see the [build troubleshooting](native/kimodo/README.md#build-troubleshooting).
+**B. Download the pinned engine source and apply Studio's patch.** Run the following lines one at a time. Stop if any command fails. These commands are for a new engine checkout; if `data/build/kimodo.cpp` already exists, inspect it before retrying. Do not apply the patch twice.
+
+```powershell
+$studioRoot = (Get-Location).Path
+$engineRoot = Join-Path $studioRoot 'data/build/kimodo.cpp'
+$buildRoot = Join-Path $engineRoot 'build/studio'
+$installRoot = Join-Path $studioRoot 'data/bin/kimodo-constraints'
+New-Item -ItemType Directory -Force (Split-Path $engineRoot) | Out-Null
+git clone https://github.com/localai-org/kimodo.cpp $engineRoot
+git -C $engineRoot checkout 5679ff19ba0a522c0b0516e9a9d402fe1af2c027
+git -C $engineRoot submodule update --init --recursive
+git -C $engineRoot apply --check (Join-Path $studioRoot 'native/kimodo/constraints.patch')
+git -C $engineRoot apply (Join-Path $studioRoot 'native/kimodo/constraints.patch')
+```
+
+The submodule step downloads GGML, which the generator requires. A failed patch check is a reason to stop and inspect the source revision or existing patch state.
+
+**C. Configure and compile the CPU engine.** Keep the same terminal open so the variables above remain defined:
+
+```powershell
+cmake -S $engineRoot -B $buildRoot -G Ninja -DCMAKE_BUILD_TYPE=Release "-DCMAKE_C_COMPILER=$compilerRoot/bin/clang.exe" "-DCMAKE_CXX_COMPILER=$compilerRoot/bin/clang++.exe" -DKIMODO_BUILD_TESTS=OFF -DKIMODO_ENABLE_VULKAN=OFF -DGGML_VULKAN=OFF -DGGML_OPENMP=OFF
+cmake --build $buildRoot --target kmd-generate --parallel 2
+```
+
+Expected: CMake configuration succeeds, followed by a successful build containing `kmd-generate.exe`. Compilation can take time. If you change compilers later, use a separate build directory instead of reusing a CMake cache made by a different compiler.
+
+**D. Install the executable, build libraries and compiler runtime together.** These commands copy into the project's ignored `data/` folder:
+
+```powershell
+New-Item -ItemType Directory -Force $installRoot | Out-Null
+Copy-Item (Join-Path $buildRoot 'kmd-generate.exe') $installRoot -Force
+Get-ChildItem $buildRoot -Recurse -Filter '*.dll' | ForEach-Object { Copy-Item $_.FullName $installRoot -Force }
+Get-ChildItem (Join-Path $compilerRoot 'bin') -Filter '*.dll' | ForEach-Object { Copy-Item $_.FullName $installRoot -Force }
+& (Join-Path $installRoot 'kmd-generate.exe') --capabilities
+```
+
+The final command must exit successfully and report `constraints: soma30-v1` and `protocol: C1`. Typical LLVM-MinGW runtime libraries include `libc++.dll`, `libunwind.dll` and `libwinpthread-1.dll`; the copy step uses the DLLs supplied by your selected toolchain rather than asking you to obtain individual files elsewhere. Build-produced GGML libraries must also remain beside the executable.
+
+The expected executable is now `data/bin/kimodo-constraints/kmd-generate.exe`. An unpatched upstream executable does not provide Studio's conditioned generation and native loop workflow. A successful capability check verifies that the program can start and supports the protocol; it **does not load or test the AI weights**.
+
+Linux/macOS require shell-appropriate toolchains, executable/library names and paths. These Windows copy commands do not apply to them; this release does not provide a verified installation walkthrough for those systems.
 
 ### 6. Start the local editor
 
@@ -169,7 +226,15 @@ Local operation needs no Runpod, Redis, R2, Vercel credentials or online account
 
 ### 7. Check a first result
 
-Follow [Your first animation](docs/GETTING_STARTED.md): create a text project, generate a short wave, play it, save the project and export. That guide also explains the first video capture and the difference between a saved project and a GLB.
+1. Choose **New project**, give it a name and select **Text to emote**.
+2. Enter a simple prompt such as `A person waves with their right hand.` Leave **Loop animation** off and skip image references for this check.
+3. Choose **Generate animation**, keep the terminal open and wait. CPU processing time depends on your hardware; a loading interface alone is not evidence of a finished generation.
+4. Play the resulting clip on the avatar, then use **Save** to retain the editable project.
+5. Open **Export** and download **Export emote** (animated rig without meshes) or **Export GLB** (the included base avatar with animation).
+
+**Expected:** the generation completes, a clip appears in the timeline, the avatar moves during playback and the browser downloads a GLB when you export. Open the downloaded file in your intended viewer/editor to check it. Saving a project and exporting a GLB are different operations.
+
+See [Your first animation](docs/GETTING_STARTED.md) for editing and the first Fast video capture. Do not install Pro to troubleshoot a failed CPU text setup; identify the failing stage first.
 
 If the interface opens but generation does not work, first check the avatar file, model paths and native engine capability result. Keep the API terminal visible for the actual error. The [online guide](https://dclmotionstudio.xyz/docs) explains the editing workflow; this README and the [native guide](native/kimodo/README.md) describe local installation.
 
@@ -202,6 +267,18 @@ If the runtime is already installed and only the checkpoint download needs retry
 
 ## When something does not work
 
+Common first-installation problems:
+
+| Symptom | What to check |
+| --- | --- |
+| `npm.ps1 cannot be loaded` in PowerShell | Use `npm.cmd` in place of `npm` for these commands, or open Command Prompt. This does not require changing the computer's execution policy. |
+| Node is not 24.x | Select/install Node 24.x, reopen the terminal and check `node --version` before installing packages. |
+| CMake/Ninja/compiler not found | Reopen after installer changes; check the extracted paths and temporary PATH setup in step 5. |
+| Patch cannot be applied | Check the pinned engine commit and whether you already applied the patch. Stop instead of building an uncertain source state. |
+| Native executable reports a missing DLL | Copy the generated libraries and matching compiler-runtime DLLs as in step 5; keep them with the executable. |
+| Studio opens but generation is unavailable | Check native capabilities, model downloads and saved full paths. An HTTP 200 from `/api/health` only confirms the API responds; inspect its engine status. |
+| Port 5173 or 8787 is in use | Stop the previous Studio terminal with Ctrl+C before starting another instance or switching modes. |
+
 Use the [troubleshooting table](docs/TROUBLESHOOTING.md). It distinguishes an installation error, missing avatar, disconnected local service, invalid tracking and a failed generation. Do not repeat the whole installation without first identifying which step failed.
 
 ## Local processing
@@ -226,6 +303,8 @@ npm test
 npm run build:local
 npm run test:e2e
 ```
+
+`npm test` runs the local automated test suite; `npm run build:local` checks TypeScript and builds the interface. For `npm run test:e2e`, first start `npm run dev` in a separate terminal and leave it running on port 5173. The current Playwright configuration selects **Microsoft Edge** (`msedge`), which must be installed; it does not start the app automatically. Model-dependent tests also need their fixtures and runtime setup, and some GPU tests are opt-in. Do not interpret skipped model tests as successful real inference.
 
 End-to-end and model-dependent tests require their documented assets, browser installation and local runtimes. A successful source build does not establish generation quality or GPU compatibility. See [release preparation](docs/GIT_PREPARATION.md) for checks actually performed on this snapshot.
 
