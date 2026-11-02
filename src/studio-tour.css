@@ -1,0 +1,103 @@
+.studio-tour-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  isolation: isolate;
+}
+.studio-tour-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.studio-tour-card {
+  position: fixed;
+  width: min(370px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  border: 1px solid #78506d;
+  border-radius: 16px;
+  padding: 22px;
+  color: #f6f0f7;
+  background: #201a27;
+  box-shadow: 0 20px 65px #0009;
+  font-family: Inter, system-ui, sans-serif;
+}
+.studio-tour-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.studio-tour-top > span {
+  color: #ffa0bd;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.studio-tour-top button {
+  border: 0;
+  padding: 5px 0;
+  background: transparent;
+  color: #d5c8dd;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.studio-tour-card h2 {
+  margin: 0;
+  color: #fff4fa;
+  font-size: 23px;
+  line-height: 1.2;
+  outline: none;
+}
+.studio-tour-card p {
+  margin: 14px 0 22px;
+  color: #d4c7dc;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.studio-tour-progress {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 22px;
+}
+.studio-tour-progress i {
+  flex: 1;
+  height: 3px;
+  background: #4b3b56;
+  border-radius: 4px;
+}
+.studio-tour-progress i.active {
+  background: #ff5785;
+}
+.studio-tour-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+.studio-tour-actions button {
+  border: 1px solid #6b5476;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: transparent;
+  color: #f7edf9;
+  font-size: 13px;
+  font-weight: 700;
+}
+.studio-tour-actions .studio-tour-next {
+  background: #f42e68;
+  border-color: #ff5b86;
+  color: white;
+}
+.studio-tour-card button:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+.studio-tour-card button:focus-visible {
+  outline: 2px solid #ffb0cc;
+  outline-offset: 3px;
+}
+.studio-tour-actions button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}

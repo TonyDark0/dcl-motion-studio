@@ -1,0 +1,236 @@
+.studio-captcha {
+  padding: 12px 14px;
+  margin: 16px 0;
+  border: 1px solid #8e7e9d66;
+  border-radius: 8px;
+  font-size: 13px;
+}
+.captcha-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+.captcha-heading button {
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  width: 32px;
+  height: 28px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.captcha-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.captcha-question input {
+  width: 65px;
+  border: 1px solid #8e7e9d88;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font: inherit;
+}
+.studio-captcha p {
+  font-size: 12px;
+  margin: 0;
+}
+.feedback-trigger {
+  font-size: 23px;
+}
+.feedback-intro {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 0;
+}
+.feedback-stars {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0 3px;
+}
+.feedback-stars button {
+  background: transparent;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  color: var(--muted);
+  font-size: 34px;
+  border-radius: 7px;
+}
+.feedback-stars button.is-filled {
+  color: #ff5276;
+}
+.feedback-scale {
+  display: flex;
+  justify-content: space-between;
+  max-width: 260px;
+  margin: 0 auto 24px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.feedback-issues {
+  border: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 18px;
+}
+.feedback-issues legend {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+.feedback-issues label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+.feedback-comment {
+  display: block;
+  font-size: 13px;
+}
+.feedback-comment textarea {
+  display: block;
+  width: 100%;
+  margin: 8px 0 17px;
+  padding: 10px;
+  resize: vertical;
+}
+.feedback-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.feedback-consent input {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.feedback-consent small {
+  display: block;
+  color: var(--muted);
+  margin-top: 6px;
+  font-size: 11px;
+}
+.feedback-error {
+  color: #ff5276;
+  font-size: 13px;
+}
+.lp-profile-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: 11px !important;
+  color: inherit;
+}
+.lp-profile-dialog {
+  max-width: 440px;
+  width: calc(100% - 40px);
+  padding: 25px;
+  color: #272131;
+  background: #faf8f5;
+  border: 1px solid #dfd4e5;
+  border-radius: 16px;
+  font-family: Inter, system-ui, sans-serif;
+}
+.lp-profile-dialog::backdrop {
+  background: #21192b88;
+  backdrop-filter: blur(4px);
+}
+.lp-profile-dialog h2 {
+  font-size: 24px;
+}
+.lp-profile-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.lp-profile-heading button {
+  background: none;
+  border: 0;
+  font-size: 25px;
+  min-height: 36px;
+}
+.lp-profile-dialog p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 17px 0;
+  color: #716978;
+}
+.lp-profile-dialog label {
+  display: block;
+  font-size: 13px;
+}
+.lp-profile-dialog input {
+  background: white;
+  color: #272131;
+  border: 1px solid #cfc5d7;
+  border-radius: 6px;
+  padding: 9px;
+  font: inherit;
+}
+.lp-profile-dialog form > label > input {
+  display: block;
+  width: 100%;
+  margin-top: 7px;
+}
+.lp-profile-dialog .captcha-question {
+  display: flex;
+}
+.lp-profile-dialog .lp-profile-small {
+  font-size: 11px;
+}
+.lp-profile-dialog .lp-cta {
+  border: 0;
+  width: 100%;
+  justify-content: center;
+}
+.lp-profile-dialog [role='alert'] {
+  color: #c5274d;
+}
+.studio-entry {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 30px;
+  background: #211b29;
+  color: #f9f4ff;
+  font-family: system-ui, sans-serif;
+}
+.studio-entry > div {
+  text-align: center;
+  max-width: 480px;
+}
+.studio-entry a {
+  color: #ff94af;
+}
+.studio-entry button {
+  padding: 10px 15px;
+  border: 1px solid #806f8e;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.legacy-project-notice {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 12px 0;
+}
+.legacy-project-notice button {
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}

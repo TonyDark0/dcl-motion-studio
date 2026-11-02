@@ -1,0 +1,24 @@
+DCL Motion Studio
+Copyright 2026 TonyDark0 and contributors.
+
+Original application source code and original technical documentation are
+licensed under the Apache License, Version 2.0. See LICENSE.
+
+This grant covers only material the project contributors are entitled to
+license. Third-party code, model weights, datasets, media, fonts, trademarks
+and user contributions retain their own terms. See THIRD_PARTY.md and
+docs/LICENSING.md. No model weights are bundled in the source distribution.
+
+Built with Meta Llama 3.
+Meta Llama 3 is licensed under the Meta Llama 3 Community License,
+Copyright (c) Meta Platforms, Inc. All Rights Reserved.
+The external Kimodo text encoder contains converted Llama 3 material and
+LLM2Vec adapters. These components are not relicensed under Apache-2.0.
+
+Kimodo constraints portions derive from NVIDIA Kimodo and localai-org
+kimodo.cpp. Preserve native/kimodo/NOTICE.md, NOTICE-KIMODO-CPP.txt and
+their associated Apache license texts. Local modifications include the
+constraints CLI protocol and Studio integration described in those notices.
+
+The SOMAHand prior is derived from NVIDIA SOMA-X material. Its license
+is preserved in public/licenses/SOMA-X.txt; provenance is in THIRD_PARTY.md.

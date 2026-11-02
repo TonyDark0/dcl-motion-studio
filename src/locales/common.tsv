@@ -1,0 +1,142 @@
+Language|Idioma|言語|Sprache|Язык|اللغة|语言
+Theme|Tema|テーマ|Design|Тема|المظهر|主题
+Dark|Oscuro|ダーク|Dunkel|Тёмная|داكن|深色
+Light|Claro|ライト|Hell|Светлая|فاتح|浅色
+Switch to light theme|Cambiar a tema claro|ライトテーマに切り替え|Zum hellen Design wechseln|Включить светлую тему|التبديل إلى المظهر الفاتح|切换浅色主题
+Switch to dark theme|Cambiar a tema oscuro|ダークテーマに切り替え|Zum dunklen Design wechseln|Включить тёмную тему|التبديل إلى المظهر الداكن|切换深色主题
+Open studio|Abrir Studio|Studioを開く|Studio öffnen|Открыть Studio|افتح Studio|打开 Studio
+How it works|Cómo funciona|使い方|So funktioniert’s|Как это работает|كيف يعمل|使用方法
+HOW IT WORKS|CÓMO FUNCIONA|使い方|SO FUNKTIONIERT’S|КАК ЭТО РАБОТАЕТ|كيف يعمل|使用方法
+FAQ|Preguntas frecuentes|よくある質問|FAQ|Частые вопросы|الأسئلة الشائعة|常见问题
+Q&A|Preguntas y respuestas|よくある質問|Fragen und Antworten|Вопросы и ответы|أسئلة وأجوبة|问与答
+Documentation|Documentación|ドキュメント|Dokumentation|Документация|الدليل|文档
+DOCUMENTATION|DOCUMENTACIÓN|ドキュメント|DOKUMENTATION|ДОКУМЕНТАЦИЯ|الدليل|文档
+Projects|Proyectos|プロジェクト|Projekte|Проекты|المشاريع|项目
+Settings|Configuración|設定|Einstellungen|Настройки|الإعدادات|设置
+New project|Nuevo proyecto|新規プロジェクト|Neues Projekt|Новый проект|مشروع جديد|新建项目
+Create project|Crear proyecto|作成|Projekt erstellen|Создать проект|إنشاء المشروع|创建项目
+Project name|Nombre del proyecto|プロジェクト名|Projektname|Название проекта|اسم المشروع|项目名称
+Workflow|Flujo de trabajo|作成方法|Arbeitsablauf|Режим работы|طريقة الإنشاء|工作流程
+Text to emote|Texto a emote|テキストからエモート|Text zu Emote|Эмоут из текста|نص إلى إيموت|文字转动作
+TEXT TO EMOTE|TEXTO A EMOTE|テキストからエモート|TEXT ZU EMOTE|ЭМОУТ ИЗ ТЕКСТА|نص إلى إيموت|文字转动作
+Video to emote|Video a emote|動画からエモート|Video zu Emote|Эмоут из видео|فيديو إلى إيموت|视频转动作
+VIDEO TO EMOTE|VIDEO A EMOTE|動画からエモート|VIDEO ZU EMOTE|ЭМОУТ ИЗ ВИДЕО|فيديو إلى إيموت|视频转动作
+Save|Guardar|保存|Speichern|Сохранить|حفظ|保存
+Cancel|Cancelar|キャンセル|Abbrechen|Отмена|إلغاء|取消
+Delete|Eliminar|削除|Löschen|Удалить|حذف|删除
+Rename|Renombrar|名前を変更|Umbenennen|Переименовать|إعادة التسمية|重命名
+Close|Cerrar|閉じる|Schließen|Закрыть|إغلاق|关闭
+Back|Atrás|戻る|Zurück|Назад|رجوع|返回
+Next|Siguiente|次へ|Weiter|Далее|التالي|下一步
+Continue|Continuar|続ける|Weiter|Продолжить|متابعة|继续
+Export|Exportar|書き出し|Exportieren|Экспорт|تصدير|导出
+Export emote|Exportar emote|エモートを書き出す|Emote exportieren|Экспорт эмоута|تصدير الإيموت|导出动作
+Export GLB|Exportar GLB|GLBを書き出す|GLB exportieren|Экспорт GLB|تصدير GLB|导出 GLB
+Export options|Opciones de exportación|書き出し設定|Exportoptionen|Параметры экспорта|خيارات التصدير|导出选项
+Animation name|Nombre de la animación|アニメーション名|Animationsname|Название анимации|اسم الحركة|动画名称
+Generate animation|Generar animación|アニメーションを生成|Animation erzeugen|Создать анимацию|إنشاء الحركة|生成动画
+Generating…|Generando…|生成中…|Wird erzeugt…|Создание…|جارٍ الإنشاء…|正在生成…
+Duration|Duración|長さ|Dauer|Длительность|المدة|时长
+Prompt|Descripción|プロンプト|Beschreibung|Описание|الوصف|提示词
+Seed|Semilla|シード|Startwert|Сид|البذرة|随机种子
+Loop animation|Animación en bucle|ループアニメーション|Loop-Animation|Зациклить анимацию|حركة متكررة|循环动画
+Timeline loop|Bucle del timeline|タイムラインのループ|Timeline-Schleife|Цикл шкалы времени|تكرار المخطط الزمني|时间轴循环
+Timeline|Línea de tiempo|タイムライン|Timeline|Шкала времени|المخطط الزمني|时间轴
+Layers|Capas|レイヤー|Ebenen|Слои|الطبقات|图层
+Layer|Capa|レイヤー|Ebene|Слой|طبقة|图层
+Body|Cuerpo|体|Körper|Тело|الجسم|身体
+Hands|Manos|手|Hände|Кисти|اليدان|双手
+Feet|Pies|足|Füße|Стопы|القدمان|双脚
+Speed|Velocidad|速度|Geschwindigkeit|Скорость|السرعة|速度
+Zoom|Zoom|ズーム|Zoom|Масштаб|تكبير|缩放
+Source|Origen|元の移動|Originalbewegung|Исходное движение|الحركة الأصلية|原始移动
+In place|En sitio|その場で|Auf der Stelle|На месте|في المكان|原地
+Controls|Controles|コントロール|Steuerung|Управление|أدوات التحكم|控制
+Bones|Huesos|ボーン|Knochen|Кости|العظام|骨骼
+Reset|Restablecer|リセット|Zurücksetzen|Сбросить|إعادة ضبط|重置
+Undo|Deshacer|元に戻す|Rückgängig|Отменить|تراجع|撤销
+Redo|Rehacer|やり直す|Wiederholen|Повторить|إعادة|重做
+Duplicate|Duplicar|複製|Duplizieren|Дублировать|نسخ|复制
+Split|Dividir|分割|Teilen|Разделить|تقسيم|分割
+Remove clip|Eliminar clip|クリップを削除|Clip entfernen|Удалить клип|حذف المقطع|删除片段
+Remove layer|Eliminar capa|レイヤーを削除|Ebene entfernen|Удалить слой|حذف الطبقة|删除图层
+Play|Reproducir|再生|Abspielen|Воспроизвести|تشغيل|播放
+Pause|Pausar|一時停止|Pause|Пауза|إيقاف مؤقت|暂停
+Preview|Vista previa|プレビュー|Vorschau|Предпросмотр|معاينة|预览
+Send to timeline|Enviar a la línea de tiempo|タイムラインに追加|Zur Timeline senden|Добавить на шкалу|إرسال إلى المخطط الزمني|发送到时间轴
+Discard|Descartar|破棄|Verwerfen|Отклонить|تجاهل|丢弃
+Accept and generate|Aceptar y generar|承認して生成|Bestätigen und erzeugen|Принять и создать|قبول وإنشاء|接受并生成
+Select video|Seleccionar video|動画を選択|Video auswählen|Выбрать видео|اختر فيديو|选择视频
+Capture engine|Modo de captura|キャプチャモード|Aufnahmemodus|Режим захвата|وضع الالتقاط|捕捉模式
+Analyze tracking|Analizar captura|動作を解析|Bewegung analysieren|Анализ захвата|تحليل الحركة|分析跟踪
+Review the capture|Revisa la captura|キャプチャを確認|Aufnahme prüfen|Проверьте захват|راجع الالتقاط|检查捕捉结果
+Edit points|Corregir puntos|ポイントを修正|Punkte bearbeiten|Править точки|تعديل النقاط|编辑跟踪点
+Accept tracking|Aceptar captura|キャプチャを承認|Aufnahme bestätigen|Принять захват|قبول الالتقاط|接受跟踪
+Movement smoothness|Suavizado del movimiento|動きの滑らかさ|Bewegungsglättung|Плавность движения|نعومة الحركة|动作平滑度
+Hand smoothness|Suavizado de manos|手の滑らかさ|Handglättung|Плавность кистей|نعومة اليدين|手部平滑度
+Custom avatar|Avatar personalizado|カスタムアバター|Eigener Avatar|Свой аватар|أفاتار مخصص|自定义虚拟形象
+Wallet address|Dirección de wallet|ウォレットアドレス|Wallet-Adresse|Адрес кошелька|عنوان المحفظة|钱包地址
+Load avatar|Cargar avatar|アバターを読み込む|Avatar laden|Загрузить аватар|تحميل الأفاتار|加载虚拟形象
+Use default avatar|Usar avatar predeterminado|標準アバターを使う|Standardavatar verwenden|Стандартный аватар|استخدم الأفاتار الافتراضي|使用默认虚拟形象
+Use default avatar instead|Usar el avatar predeterminado|標準アバターで続ける|Mit Standardavatar fortfahren|Использовать стандартный аватар|استخدم الأفاتار الافتراضي بدلاً من ذلك|改用默认虚拟形象
+Preview my avatar|Visualizar mi avatar|自分のアバターを見る|Meinen Avatar ansehen|Посмотреть мой аватар|معاينة أفاتاري|预览我的虚拟形象
+Preview your avatar|Visualiza tu avatar|アバターを確認|Avatar ansehen|Посмотрите свой аватар|عاين أفاتارك|预览你的虚拟形象
+Reset avatar|Restablecer avatar|アバターをリセット|Avatar zurücksetzen|Сбросить аватар|إعادة ضبط الأفاتار|重置虚拟形象
+Rate animation|Calificar animación|アニメーションを評価|Animation bewerten|Оценить анимацию|تقييم الحركة|评价动画
+Save rating|Guardar valoración|評価を保存|Bewertung speichern|Сохранить оценку|حفظ التقييم|保存评分
+Skip tutorial|Omitir tutorial|ガイドをスキップ|Tutorial überspringen|Пропустить обучение|تخطي الشرح|跳过教程
+Take a studio tour|Ver tutorial del Studio|Studioのガイドを見る|Studio-Tour starten|Пройти обучение|جولة في Studio|查看 Studio 教程
+Start creating|Empezar a crear|作成を始める|Loslegen|Начать создание|ابدأ الإنشاء|开始创作
+Back to projects|Volver a proyectos|プロジェクトに戻る|Zurück zu Projekten|Вернуться к проектам|العودة إلى المشاريع|返回项目
+Unsaved changes|Cambios sin guardar|未保存の変更|Ungespeicherte Änderungen|Несохранённые изменения|تغييرات غير محفوظة|未保存的更改
+Save and continue|Guardar y continuar|保存して続ける|Speichern und fortfahren|Сохранить и продолжить|حفظ ومتابعة|保存并继续
+Discard changes|Descartar cambios|変更を破棄|Änderungen verwerfen|Отменить изменения|تجاهل التغييرات|放弃更改
+Loading…|Cargando…|読み込み中…|Wird geladen…|Загрузка…|جارٍ التحميل…|正在加载…
+Preparing 3D view…|Preparando vista 3D…|3Dビューを準備中…|3D-Ansicht wird vorbereitet…|Подготовка 3D…|جارٍ تجهيز العرض ثلاثي الأبعاد…|正在准备 3D 视图…
+Reference|Referencia|参照|Vorlage|Референс|المرجع|参考
+Reference 1|Referencia 1|参照 1|Vorlage 1|Референс 1|المرجع 1|参考 1
+Reference 2|Referencia 2|参照 2|Vorlage 2|Референс 2|المرجع 2|参考 2
+Reference 3|Referencia 3|参照 3|Vorlage 3|Референс 3|المرجع 3|参考 3
+Tracking|Captura|キャプチャ|Aufnahme|Захват|الالتقاط|跟踪
+Captured movement|Movimiento capturado|キャプチャした動き|Erfasste Bewegung|Захваченное движение|الحركة الملتقطة|捕捉的动作
+The original movement|El movimiento original|元の動き|Die ursprüngliche Bewegung|Исходное движение|الحركة الأصلية|原始动作
+Faster|Más rápido|より速く|Schneller|Быстрее|أسرع|更快
+More precise|Más preciso|より正確に|Genauer|Точнее|أكثر دقة|更精准
+Shadowboxing|Boxeo de sombra|シャドーボクシング|Schattenboxen|Бой с тенью|ملاكمة الظل|空击拳
+Stargazing|Mirar las estrellas|星を見る|Sterne betrachten|Наблюдение за звёздами|تأمل النجوم|观星
+Sneaking|Sigilo|忍び足|Schleichen|Красться|التسلل|潜行
+Balance|Equilibrio|バランス|Balance|Равновесие|التوازن|平衡
+Stretching|Estiramiento|ストレッチ|Dehnen|Растяжка|التمدد|伸展
+Your idea.|Tu idea.|あなたのアイデア。|Deine Idee.|Ваша идея.|فكرتك.|你的创意。
+Your avatar.|Tu avatar.|あなたのアバター。|Dein Avatar.|Ваш аватар.|أفاتارك.|你的形象。
+Your next|Tu próximo|次の|Dein nächstes|Ваш следующий|الإيموت|你的下一个
+emote.|emote.|エモート。|Emote.|эмоут.|القادم.|动作。
+Turn a text prompt or a video into a Decentraland emote.|Convierte un texto o un video en un emote para Decentraland.|テキストや動画をDecentralandのエモートに。|Verwandle Text oder Video in ein Decentraland-Emote.|Превратите текст или видео в эмоут Decentraland.|حوّل وصفاً أو فيديو إلى إيموت في Decentraland.|将文字或视频变成 Decentraland 动作。
+Try the examples with your avatar|Prueba los ejemplos con tu avatar|自分のアバターで試す|Beispiele mit deinem Avatar testen|Попробуйте примеры со своим аватаром|جرّب الأمثلة بأفاتارك|用你的虚拟形象试用示例
+Just your public address. No connection or signature needed.|Solo tu dirección pública. Sin conectar ni firmar.|公開アドレスだけ。接続や署名は不要です。|Nur deine öffentliche Adresse. Keine Verbindung oder Signatur nötig.|Только публичный адрес. Подключение и подпись не нужны.|عنوانك العام فقط. لا يلزم اتصال أو توقيع.|只需公开地址，无需连接或签名。
+From your idea to your emote.|De tu idea a tu emote.|アイデアからエモートへ。|Von deiner Idee zum Emote.|От идеи к эмоуту.|من فكرتك إلى إيموتك.|从创意到动作。
+Choose your starting point. We’ll guide you through it.|Elige cómo comenzar. Te guiamos paso a paso.|始め方を選び、手順に沿って進めましょう。|Wähle deinen Einstieg. Wir führen dich Schritt für Schritt.|Выберите способ создания. Мы проведём вас по шагам.|اختر نقطة البداية وسنرشدك خطوة بخطوة.|选择起点，我们会逐步引导你。
+Creation workflow|Método de creación|作成方法|Erstellungsablauf|Способ создания|طريقة الإنشاء|创作方式
+One video. Two ways to capture your movement.|Un video. Dos formas de capturar tu movimiento.|ひとつの動画。ふたつのキャプチャ方法。|Ein Video. Zwei Wege, deine Bewegung zu erfassen.|Одно видео. Два способа захватить движение.|فيديو واحد. طريقتان لالتقاط حركتك.|一个视频，两种动作捕捉方式。
+Raw captures. Fast is quicker, Pro is more precise|Capturas sin edición. Fast es más rápido, Pro más preciso|未編集のキャプチャ。Fastは高速、Proは高精度|Unbearbeitete Aufnahmen. Fast ist schneller, Pro genauer|Без ручной правки. Fast быстрее, Pro точнее|التقاطات دون تعديل. Fast أسرع وPro أدق|未经手动编辑。Fast 更快，Pro 更精准
+A few things|Quizá tengas|よくある|Ein paar|Возможно,|قد تكون لديك|你可能
+you might be wondering.|algunas preguntas.|質問。|häufige Fragen.|у вас есть вопросы.|بعض الأسئلة.|想知道的事。
+Everything you need|Lo que necesitas|最初のアイデアを|Alles, was du brauchst,|Всё необходимое,|كل ما تحتاجه|开始第一个
+to start with your first idea.|para comenzar tu primera idea.|形にするために。|um mit deiner ersten Idee loszulegen.|чтобы воплотить первую идею.|لتبدأ بفكرتك الأولى.|创意所需的信息。
+From first prompt to final emote.|Del primer texto al emote final.|最初の説明から完成したエモートまで。|Vom ersten Text zum fertigen Emote.|От первого описания до готового эмоута.|من أول وصف إلى الإيموت النهائي.|从第一条提示到最终动作。
+Step-by-step guides, real interface screenshots, and a closer look at how the studio works.|Guías paso a paso, imágenes de la interfaz real y una explicación del Studio.|実際の画面を使った手順とStudioの仕組みを紹介します。|Schritt-für-Schritt-Anleitungen, echte Screenshots und Einblicke ins Studio.|Пошаговые руководства, снимки интерфейса и объяснение работы Studio.|أدلة خطوة بخطوة وصور للواجهة الفعلية وشرح لعمل Studio.|分步指南、真实界面截图和 Studio 工作原理介绍。
+Explore the guide ↗|Explora la guía ↗|ガイドを見る ↗|Anleitung ansehen ↗|Открыть руководство ↗|استكشف الدليل ↗|查看指南 ↗
+DCL Studio is a project by Tony Darko|DCL Studio es un proyecto de Tony Darko|DCL StudioはTony Darkoのプロジェクトです|DCL Studio ist ein Projekt von Tony Darko|DCL Studio — проект Tony Darko|DCL Studio مشروع من Tony Darko|DCL Studio 由 Tony Darko 发起
+Let’s shape the next|Creemos juntos|次の動きを|Gestalten wir die nächste|Создадим следующее|لنصنع الحركة|一起创造
+move together.|el próximo movimiento.|一緒につくろう。|Bewegung gemeinsam.|движение вместе.|القادمة معاً.|下一个动作。
+Follow the project, share your emotes, and tell me what you’d like to create next.|Sigue el proyecto, comparte tus emotes y cuéntame qué quieres crear después.|プロジェクトをフォローしてエモートや次のアイデアを共有しましょう。|Folge dem Projekt, teile deine Emotes und erzähl mir von deiner nächsten Idee.|Следите за проектом, делитесь эмоутами и рассказывайте о новых идеях.|تابع المشروع وشارك إيموتاتك وأخبرني بما ترغب في إنشائه لاحقاً.|关注项目、分享你的动作，并告诉我接下来想创作什么。
+Follow Tony Darko on X|Sigue a Tony Darko en X|XでTony Darkoをフォロー|Tony Darko auf X folgen|Подписаться на Tony Darko в X|تابع Tony Darko على X|在 X 上关注 Tony Darko
+An open source project by Tony Darko|Un proyecto open source de Tony Darko|Tony Darkoによるオープンソースプロジェクト|Ein Open-Source-Projekt von Tony Darko|Открытый проект Tony Darko|مشروع مفتوح المصدر من Tony Darko|Tony Darko 的开源项目
+Search documentation|Buscar en la documentación|ドキュメントを検索|Dokumentation durchsuchen|Поиск по документации|ابحث في الدليل|搜索文档
+On this page|En esta página|このページの内容|Auf dieser Seite|На этой странице|في هذه الصفحة|本页内容
+Good to know|Conviene saber|補足|Gut zu wissen|Полезно знать|من المفيد معرفته|温馨提示
+View full size ↗|Ver tamaño completo ↗|原寸で見る ↗|In voller Größe ansehen ↗|Полный размер ↗|عرض بالحجم الكامل ↗|查看完整尺寸 ↗
+← Previous|← Anterior|← 前へ|← Zurück|← Назад|السابق ←|← 上一篇
+Next →|Siguiente →|次へ →|Weiter →|Далее →|→ التالي|下一篇 →
+← Back to landing|← Volver al inicio|← ホームに戻る|← Zur Startseite|← На главную|العودة للرئيسية ←|← 返回首页
+Current beta workflow · Screenshots from the running studio|Flujo beta actual · Capturas del Studio en ejecución|ベータ版の操作手順 · 実際のStudio画面|Aktueller Beta-Ablauf · Screenshots aus dem Studio|Текущая бета · Снимки работающего Studio|سير العمل التجريبي الحالي · صور من Studio|当前测试版流程 · Studio 实际截图

@@ -1,0 +1,131 @@
+Describe the emote|Describe el emote|エモートを説明|Emote beschreiben|Опишите эмоут|صف الإيموت|描述动作
+A person waves with their hand…|Una persona saluda con la mano…|人が手を振る…|Eine Person winkt…|Человек машет рукой…|شخص يلوّح بيده…|一个人挥手……
+Keep style|Mantener variación|バリエーションを維持|Variation behalten|Сохранить вариацию|الحفاظ على التنوع|保持变化方式
+Cancel generation|Cancelar generación|生成を中止|Generierung abbrechen|Отменить генерацию|إلغاء الإنشاء|取消生成
+Project saved.|Proyecto guardado.|保存しました。|Projekt gespeichert.|Проект сохранён.|تم حفظ المشروع.|项目已保存。
+Animation added to timeline.|Animación agregada a la línea de tiempo.|タイムラインに追加しました。|Animation zur Timeline hinzugefügt.|Анимация добавлена на шкалу.|أُضيفت الحركة إلى المخطط.|动画已添加到时间轴。
+Back to home|Volver al inicio|ホームに戻る|Zur Startseite|На главную|العودة للرئيسية|返回首页
+Skip to editor|Ir al editor|エディターへ|Zum Editor|К редактору|انتقل للمحرر|跳转到编辑器
+Your local animation projects.|Tus proyectos de animación.|アニメーションプロジェクト。|Deine Animationsprojekte.|Ваши проекты анимации.|مشاريع الحركة الخاصة بك.|你的动画项目。
+Search projects|Buscar proyectos|プロジェクトを検索|Projekte suchen|Поиск проектов|ابحث عن مشاريع|搜索项目
+Filter projects|Filtrar proyectos|プロジェクトを絞り込み|Projekte filtern|Фильтр проектов|تصفية المشاريع|筛选项目
+All projects|Todos los proyectos|すべてのプロジェクト|Alle Projekte|Все проекты|جميع المشاريع|所有项目
+Project view|Vista de proyectos|プロジェクト表示|Projektansicht|Вид проектов|عرض المشاريع|项目视图
+List|Lista|一覧|Liste|Список|قائمة|列表
+Retry|Reintentar|再試行|Erneut versuchen|Повторить|إعادة المحاولة|重试
+Loading projects…|Cargando proyectos…|プロジェクト読み込み中…|Projekte werden geladen…|Загрузка проектов…|جارٍ تحميل المشاريع…|正在加载项目……
+No projects yet. Create a project to begin.|Aún no hay proyectos. Crea uno para comenzar.|まだプロジェクトがありません。新規作成してください。|Noch keine Projekte. Erstelle eins zum Starten.|Пока нет проектов. Создайте первый.|لا توجد مشاريع بعد. أنشئ مشروعاً للبدء.|暂无项目，请先创建项目。
+Open project|Abrir proyecto|プロジェクトを開く|Projekt öffnen|Открыть проект|فتح المشروع|打开项目
+Delete project|Eliminar proyecto|プロジェクトを削除|Projekt löschen|Удалить проект|حذف المشروع|删除项目
+Delete this saved project?|¿Eliminar este proyecto guardado?|保存済みプロジェクトを削除しますか？|Gespeichertes Projekt löschen?|Удалить сохранённый проект?|حذف هذا المشروع المحفوظ؟|删除此已保存的项目？
+Save your current project before switching?|¿Guardar el proyecto antes de cambiar?|切り替える前に保存しますか？|Vor dem Wechsel speichern?|Сохранить проект перед переходом?|حفظ المشروع قبل التبديل؟|切换前保存当前项目？
+Camera views|Vistas de cámara|カメラ表示|Kameraansichten|Виды камеры|عروض الكاميرا|摄像机视图
+One camera|Una cámara|1画面|Eine Kamera|Одна камера|كاميرا واحدة|单摄像机
+Two cameras|Dos cámaras|2画面|Zwei Kameras|Две камеры|كاميرتان|双摄像机
+Customize avatar|Personalizar avatar|アバターをカスタマイズ|Avatar anpassen|Настроить аватар|تخصيص الأفاتار|自定义形象
+Bones and controls|Huesos y controles|ボーンと操作点|Knochen und Steuerung|Кости и управление|العظام والتحكم|骨骼与控制
+Motion mode|Modo de movimiento|移動モード|Bewegungsmodus|Режим движения|وضع الحركة|运动模式
+In place (game ready)|En sitio (para el juego)|その場で（ゲーム用）|Auf der Stelle (spielbereit)|На месте (для игры)|في المكان (للعبة)|原地（适用于游戏）
+Source movement|Movimiento original|元の移動|Originalbewegung|Исходное движение|الحركة الأصلية|原始移动
+Keeps turns and jumps, without moving across the floor.|Conserva giros y saltos sin desplazarse por el suelo.|床上の移動を除き、回転とジャンプを保持します。|Erhält Drehungen und Sprünge ohne Weg über den Boden.|Сохраняет повороты и прыжки без перемещения по полу.|يحافظ على الدوران والقفز دون الانتقال على الأرض.|保留旋转与跳跃，不在地面上移动。
+Loading avatar…|Cargando avatar…|アバター読み込み中…|Avatar wird geladen…|Загрузка аватара…|جارٍ تحميل الأفاتار…|正在加载形象……
+PERSPECTIVE|PERSPECTIVA|透視図|PERSPEKTIVE|ПЕРСПЕКТИВА|منظور|透视
+FLOOR|SUELO|床|BODEN|ПОЛ|الأرض|地面
+Left foot|Pie izquierdo|左足|Linker Fuß|Левая стопа|القدم اليسرى|左脚
+Right foot|Pie derecho|右足|Rechter Fuß|Правая стопа|القدم اليمنى|右脚
+Left hand|Mano izquierda|左手|Linke Hand|Левая кисть|اليد اليسرى|左手
+Right hand|Mano derecha|右手|Rechte Hand|Правая кисть|اليد اليمنى|右手
+Drag to orbit · Wheel to zoom|Arrastra para girar · Rueda para acercar|ドラッグで回転 · ホイールでズーム|Ziehen zum Drehen · Mausrad zum Zoomen|Тяните для вращения · Колесо для масштаба|اسحب للدوران · العجلة للتكبير|拖动环绕 · 滚轮缩放
+Drag to orbit · Scroll to zoom|Arrastra para girar · Rueda para acercar|ドラッグで回転 · スクロールでズーム|Ziehen zum Drehen · Scrollen zum Zoomen|Тяните для вращения · Прокрутка для масштаба|اسحب للدوران · مرر للتكبير|拖动环绕 · 滚动缩放
+AVATAR CONTROLS|CONTROLES DEL AVATAR|アバター操作|AVATARSTEUERUNG|УПРАВЛЕНИЕ АВАТАРОМ|تحكم الأفاتار|形象控制
+Choose a hand or foot. Adjust its position and angle.|Elige una mano o pie. Ajusta su posición y ángulo.|手または足の位置と角度を調整します。|Wähle Hand oder Fuß. Passe Position und Winkel an.|Выберите кисть или стопу. Настройте положение и угол.|اختر يداً أو قدماً واضبط موضعها وزاويتها.|选择手或脚，调整位置与角度。
+Choose a body part|Elige una parte del cuerpo|部位を選択|Körperteil wählen|Выберите часть тела|اختر جزءاً من الجسم|选择身体部位
+Position|Posición|位置|Position|Положение|الموضع|位置
+Angle|Ángulo|角度|Winkel|Угол|الزاوية|角度
+Body and balance|Cuerpo y equilibrio|体とバランス|Körper und Balance|Тело и равновесие|الجسم والتوازن|身体与平衡
+Body height|Altura del cuerpo|体の高さ|Körperhöhe|Высота тела|ارتفاع الجسم|身体高度
+Elbow bend|Ajuste de codos|肘の曲がり|Ellbogenbeugung|Сгиб локтей|ثني المرفق|肘部弯曲
+Knee bend|Ajuste de rodillas|膝の曲がり|Kniebeugung|Сгиб коленей|ثني الركبة|膝部弯曲
+Correct foot contacts|Corregir contactos de pies|足の接地を補正|Fußkontakte korrigieren|Исправить контакт стоп|تصحيح تماس القدمين|修正脚部接触
+Keeps support steady while preserving jumps.|Estabiliza el apoyo y conserva los saltos.|ジャンプを保ちながら接地を安定させます。|Stabilisiert den Stand und erhält Sprünge.|Стабилизирует опору, сохраняя прыжки.|يثبت الدعم مع الحفاظ على القفز.|稳定支撑并保留跳跃。
+Reset all controls|Restablecer todos los controles|すべてリセット|Alle Regler zurücksetzen|Сбросить всё управление|إعادة ضبط كل التحكم|重置所有控制
+Left / right|Izquierda / derecha|左右|Links / rechts|Влево / вправо|يسار / يمين|左 / 右
+Down / up|Abajo / arriba|上下|Unten / oben|Вниз / вверх|أسفل / أعلى|下 / 上
+Back / forward|Atrás / adelante|前後|Zurück / vor|Назад / вперёд|خلف / أمام|后 / 前
+Tilt|Inclinación|傾き|Neigung|Наклон|ميل|倾斜
+Turn|Giro|回転|Drehung|Поворот|دوران|转向
+Roll|Balanceo|ロール|Rollen|Крен|التفاف|滚转
+Animation timeline|Línea de tiempo de animación|アニメーションタイムライン|Animations-Timeline|Шкала анимации|المخطط الزمني للحركة|动画时间轴
+Animation settings|Ajustes de animación|アニメーション設定|Animationseinstellungen|Настройки анимации|إعدادات الحركة|动画设置
+Selected clip|Clip seleccionado|選択中のクリップ|Ausgewählter Clip|Выбранный клип|المقطع المحدد|所选片段
+Blend mode|Modo de mezcla|合成モード|Mischmodus|Режим смешивания|وضع المزج|混合模式
+Replace|Reemplazar|置換|Ersetzen|Заменить|استبدال|替换
+Combine|Combinar|結合|Kombinieren|Объединить|دمج|组合
+Influence|Influencia|影響度|Einfluss|Влияние|التأثير|影响度
+Clip influence|Influencia del clip|クリップの影響度|Clip-Einfluss|Влияние клипа|تأثير المقطع|片段影响度
+Style|Estilo|スタイル|Stil|Стиль|النمط|风格
+Smooth|Suave|スムーズ|Glatt|Плавный|سلس|平滑
+Linear|Lineal|リニア|Linear|Линейный|خطي|线性
+Clip|Clip|クリップ|Clip|Клип|مقطع|片段
+Clip start|Inicio del clip|クリップ開始|Clip-Start|Начало клипа|بداية المقطع|片段开始
+Source in|Inicio de origen|素材の開始|Quellanfang|Начало источника|بداية المصدر|源起点
+Source out|Final de origen|素材の終了|Quellende|Конец источника|نهاية المصدر|源终点
+Repeat clip|Repetir clip|クリップ反復|Clip wiederholen|Повтор клипа|تكرار المقطع|重复片段
+Channels|Canales|チャンネル|Kanäle|Каналы|القنوات|通道
+Blend in|Entrada suave|入りの混合|Einblenden|Плавный вход|مزج الدخول|淡入
+Blend out|Salida suave|出の混合|Ausblenden|Плавный выход|مزج الخروج|淡出
+Trim start|Recortar inicio|先頭をトリミング|Anfang kürzen|Обрезать начало|قص البداية|裁剪开头
+Trim end|Recortar final|末尾をトリミング|Ende kürzen|Обрезать конец|قص النهاية|裁剪结尾
+Timeline zoom|Zoom de línea de tiempo|タイムライン拡大|Timeline-Zoom|Масштаб шкалы|تكبير المخطط|时间轴缩放
+Animation position|Posición de animación|再生位置|Animationsposition|Позиция анимации|موضع الحركة|动画位置
+Layer name|Nombre de capa|レイヤー名|Ebenenname|Название слоя|اسم الطبقة|图层名称
+Move layer up|Subir capa|レイヤーを上へ|Ebene nach oben|Слой выше|رفع الطبقة|上移图层
+Move layer down|Bajar capa|レイヤーを下へ|Ebene nach unten|Слой ниже|خفض الطبقة|下移图层
+Add hands|Agregar manos|手を追加|Hände hinzufügen|Добавить кисти|إضافة اليدين|添加手部
+Hand templates|Plantillas de manos|手のテンプレート|Handvorlagen|Шаблоны кистей|قوالب اليدين|手部模板
+Loop playback|Repetir reproducción|ループ再生|Loop-Wiedergabe|Повтор воспроизведения|تكرار التشغيل|循环播放
+Back to start|Volver al inicio|先頭に戻る|Zum Anfang|В начало|العودة للبداية|返回开头
+Go to start|Ir al inicio|先頭へ|Zum Anfang|К началу|اذهب للبداية|跳到开头
+Go to end|Ir al final|末尾へ|Zum Ende|К концу|اذهب للنهاية|跳到结尾
+Previous frame|Fotograma anterior|前のコマ|Vorheriges Bild|Предыдущий кадр|الإطار السابق|上一帧
+Next frame|Siguiente fotograma|次のコマ|Nächstes Bild|Следующий кадр|الإطار التالي|下一帧
+Review speed|Velocidad de revisión|確認速度|Prüfgeschwindigkeit|Скорость просмотра|سرعة المراجعة|检查速度
+Capture|Captura|キャプチャ|Aufnahme|Захват|الالتقاط|捕捉
+Generation|Generación|生成|Generierung|Генерация|الإنشاء|生成
+Processing time|Tiempo de procesamiento|処理時間|Verarbeitungszeit|Время обработки|وقت المعالجة|处理时间
+Elapsed time|Tiempo transcurrido|経過時間|Verstrichene Zeit|Прошедшее время|الوقت المنقضي|已用时间
+Review video|Revisar video|動画を確認|Video prüfen|Проверить видео|مراجعة الفيديو|检查视频
+Review tracking|Revisar captura|キャプチャを確認|Aufnahme prüfen|Проверить захват|مراجعة الالتقاط|检查跟踪
+Show points|Mostrar puntos|ポイントを表示|Punkte anzeigen|Показать точки|إظهار النقاط|显示跟踪点
+Reference video|Video de referencia|参照動画|Referenzvideo|Референсное видео|الفيديو المرجعي|参考视频
+Choose the part to use|Elige el fragmento|使用区間を選択|Abschnitt auswählen|Выберите отрезок|اختر الجزء المطلوب|选择要使用的片段
+Start|Inicio|開始|Start|Начало|البداية|开始
+End|Final|終了|Ende|Конец|النهاية|结束
+Middle|Intermedia|中間|Mitte|Середина|الوسط|中间
+Middle 2|Intermedia 2|中間2|Mitte 2|Середина 2|الوسط 2|中间 2
+Start / End|Inicio / Final|開始／終了|Start / Ende|Начало / Конец|البداية / النهاية|起始 / 结束
+Video start|Inicio del video|動画開始|Videostart|Начало видео|بداية الفيديو|视频开始
+Capture duration|Duración de captura|キャプチャ時間|Aufnahmedauer|Длительность захвата|مدة الالتقاط|捕捉时长
+Review playback|Reproducir revisión|確認再生|Prüfwiedergabe|Просмотр захвата|تشغيل المراجعة|检查播放
+Tracking frame|Fotograma de captura|キャプチャフレーム|Aufnahmebild|Кадр захвата|إطار الالتقاط|跟踪帧
+Reliable|Fiable|信頼度高|Zuverlässig|Надёжно|موثوق|可靠
+Review|Revisar|要確認|Prüfen|Проверить|مراجعة|检查
+Low confidence|Baja confianza|信頼度低|Unsicher|Низкая уверенность|ثقة منخفضة|低置信度
+Manual|Manual|手動|Manuell|Вручную|يدوي|手动
+Show|Mostrar|表示|Anzeigen|Показать|إظهار|显示
+Body and hands|Cuerpo y manos|体と手|Körper und Hände|Тело и кисти|الجسم واليدان|身体和双手
+Undo correction|Deshacer corrección|修正を取り消す|Korrektur rückgängig|Отменить правку|تراجع عن التصحيح|撤销修正
+Reset point|Restablecer punto|ポイントをリセット|Punkt zurücksetzen|Сбросить точку|إعادة ضبط النقطة|重置点
+Apply to nearby frames|Aplicar a fotogramas cercanos|近隣フレームにも適用|Auf nahe Frames anwenden|Применить к соседним кадрам|تطبيق على إطارات قريبة|应用到相邻帧
+Apply correction nearby|Extender corrección|近隣に修正適用|Korrektur übertragen|Распространить правку|توسيع التصحيح|传播修正
+Backward|Hacia atrás|前方フレームへ|Rückwärts|Назад|للخلف|向前帧
+Forward|Hacia delante|後方フレームへ|Vorwärts|Вперёд|للأمام|向后帧
+Review next issue|Revisar siguiente problema|次の問題を確認|Nächstes Problem prüfen|Следующая проблема|راجع المشكلة التالية|检查下一个问题
+Edit clip|Editar clip|クリップ編集|Clip bearbeiten|Редактировать клип|تعديل المقطع|编辑片段
+Accept pose|Aceptar pose|ポーズを承認|Pose bestätigen|Принять позу|قبول الوضعية|接受姿势
+Review pose|Revisar pose|ポーズを確認|Pose prüfen|Проверить позу|مراجعة الوضعية|检查姿势
+Add image|Agregar imagen|画像を追加|Bild hinzufügen|Добавить фото|إضافة صورة|添加图片
+Replace image|Reemplazar imagen|画像を変更|Bild ersetzen|Заменить фото|استبدال الصورة|替换图片
+Image poses|Poses de imágenes|画像ポーズ|Bildposen|Позы из фото|وضعيات الصور|图片姿势
+Accepted|Aceptado|承認済み|Bestätigt|Принято|مقبول|已接受
+Interface shown in English|Interfaz mostrada en inglés|画面は英語表示|Oberfläche auf Englisch dargestellt|Интерфейс показан на английском|الواجهة المعروضة بالإنجليزية|界面截图为英文

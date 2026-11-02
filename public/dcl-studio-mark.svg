@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="title">
+  <title id="title">DCL Motion Studio</title>
+  <defs>
+    <linearGradient id="rose-plum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DB2D5C"/>
+      <stop offset="0.28" stop-color="#B72659"/>
+      <stop offset="0.62" stop-color="#76264F"/>
+      <stop offset="1" stop-color="#39253F"/>
+    </linearGradient>
+    <radialGradient id="soft-rose" cx="0.72" cy="0.08" r="0.8">
+      <stop offset="0" stop-color="#FB4168" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#FB4168" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="rounded-square">
+      <rect width="400" height="400" rx="68"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#rounded-square)">
+    <rect width="400" height="400" fill="url(#rose-plum)"/>
+    <rect width="400" height="400" fill="url(#soft-rose)"/>
+  </g>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M104 154 C147 145 190 128 224 127 C252 126 265 151 283 171 C305 191 325 169 346 156" stroke-width="35"/>
+    <path d="M53 199 C88 196 128 185 159 178" stroke-width="20"/>
+    <path d="M247 171 C224 201 194 221 159 244 C128 264 101 282 79 300" stroke-width="51"/>
+    <path d="M220 217 C242 214 261 218 271 233 C277 249 250 278 226 307" stroke-width="44"/>
+  </g>
+  <circle cx="290" cy="104" r="31" fill="#fff"/>
+</svg>

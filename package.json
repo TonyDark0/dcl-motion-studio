@@ -1,0 +1,62 @@
+{
+  "name": "dcl-motion-studio",
+  "private": true,
+  "version": "0.3.0",
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "vite --host 127.0.0.1 --configLoader runner",
+    "dev:api": "node --env-file-if-exists=.env --import tsx server/index.ts",
+    "setup:models": "node scripts/setup-models.mjs",
+    "setup:video": "node scripts/setup-video.mjs",
+    "setup:pro": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup-pro-vision.ps1",
+    "setup:pro:models": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup-pro-vision.ps1 -ModelsOnly",
+    "build": "node scripts/build-target.mjs local",
+    "build:local": "node scripts/build-target.mjs local",
+    "test": "vitest run --configLoader runner",
+    "test:e2e": "playwright test",
+    "start": "node --env-file-if-exists=.env --import tsx server/index.ts",
+    "setup:public": "node scripts/setup-public-assets.mjs"
+  },
+  "dependencies": {
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
+    "@fastify/static": "10.1.5",
+    "@mediapipe/tasks-vision": "0.10.32",
+    "@mui/material": "5.16.0",
+    "decentraland-ui2": "3.23.3",
+    "fastify": "5.12.5",
+    "onnxruntime-node": "1.23.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.180.0",
+    "zod": "4.6.5",
+    "zustand": "5.0.15"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "24.13.6",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@types/three": "0.180.0",
+    "@vitejs/plugin-react": "5.2.0",
+    "gltf-validator": "2.0.0-dev.3.10",
+    "prettier": "3.9.8",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vite": "7.3.6",
+    "vitest": "4.1.11"
+  },
+  "overrides": {
+    "adm-zip": "0.6.1",
+    "source-map-js": "1.2.2",
+    "decentraland-ui2": {
+      "uuid": "11.1.1"
+    }
+  },
+  "license": "Apache-2.0",
+  "description": "Local-first Decentraland motion editor with CPU Kimodo inference and local video tracking."
+}

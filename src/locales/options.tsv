@@ -1,0 +1,31 @@
+Keep style from last generation|Mantener variación de la última generación|前回の生成の傾向を保つ|Stil der letzten Generierung beibehalten|Сохранить стиль прошлой генерации|احتفظ بنمط الإنشاء السابق|保留上次生成风格
+Generate an animation first to lock its seed|Genera primero una animación para fijar su semilla|シードを固定するには先に生成してください|Generiere zuerst eine Animation, um den Seed zu fixieren|Сначала создайте анимацию для фиксации зерна|أنشئ تحريكاً أولاً لتثبيت البذرة|先生成动画以锁定种子
+Uses the start image at both ends, then smooths the loop.|Usa la imagen inicial en ambos extremos y suaviza el bucle.|開始画像を両端に使い、ループを滑らかにします。|Nutzt das Startbild an beiden Enden und glättet die Schleife.|Использует начальное фото на обоих концах и сглаживает цикл.|يستخدم صورة البداية عند الطرفين ثم ينعّم التكرار.|首尾均使用初始图像，然后平滑循环。
+Requires the Studio constraints build of Kimodo.|Requiere Kimodo con Studio Constraints.|Studio Constraints対応のKimodoが必要です。|Benötigt die Studio-Constraints-Version von Kimodo.|Требуется сборка Kimodo со Studio Constraints.|يتطلب نسخة Kimodo الداعمة لـ Studio Constraints.|需要支持 Studio Constraints 的 Kimodo 版本。
+Skin|Piel|肌|Haut|Кожа|البشرة|皮肤
+Hair|Cabello|髪|Haare|Волосы|الشعر|头发
+Colors from wallet profile|Colores del perfil de wallet|ウォレットプロフィールの色|Farben aus dem Wallet-Profil|Цвета из профиля кошелька|ألوان ملف المحفظة|钱包资料中的颜色
+Skin color|Color de piel|肌の色|Hautfarbe|Цвет кожи|لون البشرة|肤色
+Hair color|Color de cabello|髪の色|Haarfarbe|Цвет волос|لون الشعر|发色
+Skin hue|Tono de piel|肌の色相|Hautton|Тон кожи|درجة البشرة|皮肤色相
+Hair hue|Tono de cabello|髪の色相|Haarton|Тон волос|درجة الشعر|头发色相
+Skin brightness|Luminosidad de piel|肌の明るさ|Hauthelligkeit|Яркость кожи|سطوع البشرة|皮肤亮度
+Hair brightness|Luminosidad de cabello|髪の明るさ|Haarhelligkeit|Яркость волос|سطوع الشعر|头发亮度
+Checking…|Comprobando…|確認中…|Wird geprüft…|Проверка…|جارٍ الفحص…|正在检查…
+Check installation|Comprobar instalación|インストールを確認|Installation prüfen|Проверить установку|افحص التثبيت|检查安装
+Show avatar controls|Mostrar controles del avatar|アバター操作を表示|Avatar-Steuerung anzeigen|Показать управление аватаром|أظهر أدوات الأفاتار|显示头像控制
+Hide avatar controls|Ocultar controles del avatar|アバター操作を隠す|Avatar-Steuerung ausblenden|Скрыть управление аватаром|أخفِ أدوات الأفاتار|隐藏头像控制
+Analyzing image…|Analizando imagen…|画像を解析中…|Bild wird analysiert…|Анализ изображения…|جارٍ تحليل الصورة…|正在分析图像…
+Front pose preview|Pose de frente|ポーズの正面図|Posenvorschau von vorne|Поза спереди|معاينة الوضعية الأمامية|正面姿势预览
+Side pose preview|Pose de lado|ポーズの側面図|Posenvorschau von der Seite|Поза сбоку|معاينة الوضعية الجانبية|侧面姿势预览
+Body smoothing|Suavizado corporal|体の平滑化|Körperglättung|Сглаживание тела|تنعيم الجسم|身体平滑
+Rename project|Renombrar proyecto|プロジェクト名を変更|Projekt umbenennen|Переименовать проект|أعد تسمية المشروع|重命名项目
+Show timeline|Mostrar línea de tiempo|タイムラインを表示|Zeitleiste anzeigen|Показать временную шкалу|أظهر المخطط الزمني|显示时间轴
+Minimize timeline|Minimizar línea de tiempo|タイムラインを最小化|Zeitleiste minimieren|Свернуть временную шкалу|صغّر المخطط الزمني|最小化时间轴
+More detail for complex movements.|Más detalle para movimientos complejos.|複雑な動きをより詳しく。|Mehr Details für komplexe Bewegungen.|Больше деталей для сложных движений.|تفاصيل أكثر للحركات المعقدة.|更精准地捕捉复杂动作。
+A quicker way to capture simple movements.|Una forma más rápida de capturar movimientos sencillos.|シンプルな動きを素早くキャプチャ。|Einfache Bewegungen schneller erfassen.|Быстрый захват простых движений.|طريقة أسرع لالتقاط الحركات البسيطة.|更快地捕捉简单动作。
+Review movement|Revisar movimiento|動きを確認|Bewegung prüfen|Проверить движение|راجع الحركة|检查动作
+Prepare your video|Prepara tu video|動画を準備|Video vorbereiten|Подготовьте видео|جهّز الفيديو|准备视频
+Pause video|Pausar video|動画を一時停止|Video pausieren|Приостановить видео|أوقف الفيديو مؤقتاً|暂停视频
+Play video|Reproducir video|動画を再生|Video abspielen|Воспроизвести видео|شغّل الفيديو|播放视频
+Cancel capture|Cancelar captura|キャプチャをキャンセル|Erfassung abbrechen|Отменить захват|ألغِ الالتقاط|取消捕捉

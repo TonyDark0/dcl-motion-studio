@@ -1,0 +1,45 @@
+.landing .open-studio-link,
+.docs .open-studio-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 1px solid #ff6688;
+  border-radius: 999px;
+  background: #f73568;
+  color: #fff;
+  font:
+    650 13px/1 system-ui,
+    sans-serif;
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.docs .open-studio-link {
+  margin-left: auto;
+}
+.open-studio-link svg {
+  flex: 0 0 16px;
+}
+.landing .open-studio-link:hover,
+.docs .open-studio-link:hover {
+  background: #dd2859;
+  box-shadow: 0 0 0 4px #fb41681a;
+}
+.open-studio-link:focus-visible {
+  outline: 2px solid #ffadc2;
+  outline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .landing .open-studio-link,
+  .docs .open-studio-link {
+    padding: 0 12px;
+    gap: 6px;
+    font-size: 12px;
+  }
+}

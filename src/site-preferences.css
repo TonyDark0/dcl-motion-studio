@@ -1,0 +1,97 @@
+.site-preferences {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.site-preferences button,
+.site-preferences select {
+  height: 36px;
+  border: 1px solid #76617b66;
+  border-radius: 8px;
+  color: inherit;
+  background: #89739312;
+  font: 500 12px system-ui;
+}
+.site-preferences button {
+  width: 36px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.site-preferences select {
+  max-width: 100px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+.site-preferences option {
+  color: #eee;
+  background: #211c27;
+}
+:root[data-studio-theme='light'] .site-preferences option {
+  color: #251c2e;
+  background: #eee8f0;
+}
+.docs-header .site-preferences {
+  margin-inline-start: auto;
+}
+.docs .open-studio-link {
+  margin-left: 0;
+}
+:root[dir='rtl'] .lp-header nav {
+  margin-left: 0;
+  margin-inline-start: auto;
+}
+:root[dir='rtl'] .lp-studio-card,
+:root[dir='rtl'] .lp-comparison-player,
+:root[dir='rtl'] .lp-mini-studio,
+:root[dir='rtl'] .timeline,
+:root[dir='rtl'] .viewport {
+  direction: ltr;
+}
+:root[dir='rtl'] .lp-example-prompt {
+  direction: rtl;
+  text-align: right;
+}
+:root[dir='rtl'] .landing h1,
+:root[dir='rtl'] .landing h2 {
+  letter-spacing: 0;
+}
+@media (max-width: 1000px) {
+  .lp-header {
+    gap: 12px;
+  }
+  .lp-header nav {
+    gap: 12px;
+  }
+}
+@media (max-width: 720px) {
+  .lp-header {
+    height: auto;
+    min-height: 76px;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 12px 20px;
+  }
+  .lp-header .site-preferences {
+    margin-inline-start: auto;
+  }
+  .lp-header .lp-logo {
+    margin-inline-end: auto;
+  }
+  .lp-header .lp-menu-toggle {
+    margin-left: 0;
+  }
+  .lp-header .open-studio-link {
+    min-height: 36px;
+  }
+  .site-preferences select {
+    max-width: 82px;
+  }
+  .docs-header {
+    gap: 10px;
+  }
+  .docs-badge {
+    order: 3;
+  }
+}

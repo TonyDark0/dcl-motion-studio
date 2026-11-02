@@ -1,0 +1,44 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+dist-cloud/
+dist-demo/
+coverage/
+test-results/
+playwright-report/
+.vercel/
+.deployment-config/
+.tmp/
+work/
+output/
+outputs/
+# User projects, runtimes, downloaded weights and inference binaries
+data/
+models/
+*.gguf
+*.onnx
+*.safetensors
+*.pt
+*.pth
+*.task
+*.exe
+*.dll
+*.sqlite*
+*.db
+*.log
+__pycache__/
+*.pyc
+# Credentials; templates must remain visible to Git
+.env
+.env.*
+!.env.example
+!.env.cloud.example
+.npmrc
+*.pem
+*.key
+# The project's base public/assets/Avatar.glb is included in Git.
+# Reference media from the separate hosted project is not included.
+/public/landing/**/*.glb
+/public/landing/**/*.mp4
+/public/landing/**/*.webm
+# Native SOURCE, patches, licenses and notices are deliberately included.

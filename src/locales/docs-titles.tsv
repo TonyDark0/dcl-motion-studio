@@ -1,0 +1,54 @@
+Getting started|Primeros pasos|はじめに|Erste Schritte|Начало работы|البدء|入门
+Create an emote|Crear un emote|エモートを作る|Emote erstellen|Создание эмоута|إنشاء إيموت|创建动作
+Edit and export|Editar y exportar|編集と書き出し|Bearbeiten und exportieren|Редактирование и экспорт|التحرير والتصدير|编辑与导出
+About the studio|Sobre el Studio|Studioについて|Über das Studio|О Studio|حول Studio|关于 Studio
+Your first project|Tu primer proyecto|最初のプロジェクト|Dein erstes Projekt|Первый проект|مشروعك الأول|第一个项目
+Loops with image poses|Bucles con poses de imágenes|写真ポーズでループ作成|Loops mit Bildposen|Циклы по фотографиям|تكرار الحركة بوضعيات الصور|使用照片姿势制作循环
+Edit the timeline|Editar la línea de tiempo|タイムラインを編集|Timeline bearbeiten|Редактирование шкалы времени|تحرير المخطط الزمني|编辑时间轴
+Avatar and movement|Avatar y movimiento|アバターと動き|Avatar und Bewegung|Аватар и движение|الأفاتار والحركة|形象与动作
+Export and share feedback|Exportar y dar feedback|書き出しとフィードバック|Export und Feedback|Экспорт и отзывы|التصدير والملاحظات|导出与反馈
+Models and workflow|Modelos y proceso|モデルと処理の流れ|Modelle und Ablauf|Модели и процесс|النماذج وسير العمل|模型与流程
+What’s next|Qué sigue|今後の予定|Wie geht es weiter?|Что дальше|ما التالي|未来计划
+Run locally|Ejecutar en local|ローカルで実行|Lokal ausführen|Локальный запуск|التشغيل محلياً|本地运行
+Troubleshooting|Solución de problemas|トラブル対処|Fehlerbehebung|Решение проблем|حل المشكلات|故障排查
+Start in Projects|Comienza en Proyectos|プロジェクトから始める|Bei Projekten starten|Начните с проектов|ابدأ بالمشاريع|从项目开始
+See your avatar from the start|Visualiza tu avatar desde el inicio|最初から自分のアバターで|Deinen Avatar sofort ansehen|Свой аватар с самого начала|شاهد أفاتارك منذ البداية|从一开始预览自己的形象
+Save and return later|Guarda y regresa después|保存して後で続ける|Speichern und später fortsetzen|Сохраните и вернитесь позже|احفظ وعُد لاحقاً|保存后稍后继续
+Write a clear prompt|Escribe una descripción clara|わかりやすく説明する|Klar beschreiben|Напишите понятное описание|اكتب وصفاً واضحاً|编写清晰的提示词
+Try another version|Prueba otra versión|別のバージョンを試す|Andere Version ausprobieren|Попробуйте другой вариант|جرّب نسخة أخرى|尝试其他版本
+Add your pose references|Agrega poses de referencia|参照ポーズを追加|Referenzposen hinzufügen|Добавьте референсы поз|أضف وضعيات مرجعية|添加参考姿势
+Review the pose before generating|Revisa la pose antes de generar|生成前にポーズを確認|Pose vor dem Erzeugen prüfen|Проверьте позу до создания|راجع الوضعية قبل الإنشاء|生成前检查姿势
+Build the movement between your poses|Crea el movimiento entre poses|ポーズ間の動きを作る|Bewegung zwischen Posen erstellen|Создайте движение между позами|أنشئ الحركة بين الوضعيات|创建姿势之间的动作
+Better pose photos: do and don’t|Fotos de poses: qué hacer y evitar|ポーズ写真の良い例・悪い例|Gute und schlechte Posefotos|Удачные и неудачные фото поз|صور الوضعيات: ما يُنصح به وما يُتجنب|姿势照片：建议与禁忌
+Check the join|Revisa la unión|つなぎ目を確認|Übergang prüfen|Проверьте стык|راجع نقطة الوصل|检查衔接
+Three different loop controls|Tres controles de bucle distintos|3種類のループ設定|Drei verschiedene Loop-Regler|Три разных управления циклом|ثلاثة عناصر مختلفة للتكرار|三种不同的循环控制
+Choose and trim a video|Elige y recorta un video|動画を選んで切り出す|Video auswählen und kürzen|Выберите и обрежьте видео|اختر الفيديو وقصّه|选择并裁剪视频
+Better video references: do and don’t|Videos de referencia: qué hacer y evitar|動画の良い例・悪い例|Gute und schlechte Videovorlagen|Удачные и неудачные видеореференсы|مراجع الفيديو: ما يُنصح به وما يُتجنب|参考视频：建议与禁忌
+Review and correct the tracking|Revisa y corrige la captura|キャプチャを確認・修正|Aufnahme prüfen und korrigieren|Проверьте и исправьте захват|راجع الالتقاط وصححه|检查并修正跟踪
+Refine the generated emote|Ajusta el emote generado|生成したエモートを調整|Erzeugtes Emote verfeinern|Доработайте созданный эмоут|حسّن الإيموت الناتج|优化生成的动作
+Make a loop from a video|Crea un bucle desde un video|動画からループを作る|Loop aus einem Video erstellen|Создайте цикл из видео|أنشئ تكراراً من فيديو|用视频制作循环
+Source or In place?|¿Origen o En sitio?|元の移動か、その場か？|Originalbewegung oder auf der Stelle?|Исходное движение или на месте?|الحركة الأصلية أم في المكان؟|原始移动还是原地？
+Move and trim clips|Mueve y recorta clips|クリップを移動・トリミング|Clips verschieben und kürzen|Перемещение и обрезка клипов|نقل المقاطع وقصها|移动与裁剪片段
+Finish a loop in the timeline|Termina un bucle en la línea de tiempo|タイムラインでループを仕上げる|Loop in der Timeline abschließen|Завершите цикл на шкале времени|أكمل التكرار في المخطط الزمني|在时间轴完成循环
+Body and Hands layers|Capas de cuerpo y manos|体と手のレイヤー|Körper- und Handebenen|Слои тела и кистей|طبقات الجسم واليدين|身体与手部图层
+Understand clip settings|Entiende los ajustes del clip|クリップ設定を理解|Clip-Einstellungen verstehen|Настройки клипа|فهم إعدادات المقطع|理解片段设置
+Use the viewport|Usa el visor|ビューを操作|Ansicht bedienen|Работа с окном просмотра|استخدم نافذة العرض|使用视口
+Adjust a hand or foot|Ajusta una mano o un pie|手足を調整|Hand oder Fuß anpassen|Настройте кисть или стопу|اضبط يداً أو قدماً|调整手或脚
+Preview a custom avatar|Visualiza un avatar personalizado|カスタムアバターを確認|Eigenen Avatar ansehen|Предпросмотр своего аватара|عاين أفاتاراً مخصصاً|预览自定义形象
+Export your animation|Exporta tu animación|アニメーションを書き出す|Animation exportieren|Экспорт анимации|صدّر حركتك|导出动画
+Name the animation|Nombra la animación|アニメーションに名前を付ける|Animation benennen|Назовите анимацию|سمّ الحركة|命名动画
+Rate a generation|Califica una generación|生成結果を評価|Ergebnis bewerten|Оцените результат|قيّم النتيجة|评价生成结果
+Models used|Modelos utilizados|使用モデル|Verwendete Modelle|Используемые модели|النماذج المستخدمة|使用的模型
+From reference to emote|De referencia a emote|参照からエモートへ|Von der Vorlage zum Emote|От референса к эмоуту|من المرجع إلى الإيموت|从参考到动作
+What to expect|Qué esperar|できることと限界|Was du erwarten kannst|Чего ожидать|ما يمكن توقعه|预期效果
+Learn from real creations|Aprender de creaciones reales|実際の作品から学ぶ|Aus echten Kreationen lernen|Учиться на реальных работах|التعلم من الإبداعات الفعلية|从真实创作中学习
+Better creative starting points|Mejores puntos de partida creativos|創作の出発点を改善|Bessere kreative Ausgangspunkte|Лучшие отправные точки|نقاط بداية إبداعية أفضل|更好的创作起点
+Where we want to improve|Dónde queremos mejorar|改善したい点|Was wir verbessern möchten|Что мы хотим улучшить|مجالات التحسين|改进方向
+A fully local release|Una versión totalmente local|完全ローカル版|Eine vollständig lokale Version|Полностью локальная версия|إصدار محلي بالكامل|完全本地版本
+Local first, hybrid for this demo|Local primero, híbrido en este demo|ローカル優先・デモはハイブリッド|Lokal gedacht, Demo hybrid|Локальная основа, гибридное демо|محلي أولاً، وهجين لهذا العرض|以本地为先，演示采用混合架构
+Prepare inference separately|Prepara los modelos por separado|モデルの実行環境を別途準備|Modelle separat vorbereiten|Подготовка моделей отдельно|جهّز تشغيل النماذج بشكل منفصل|单独准备推理环境
+Storage and model licenses|Almacenamiento y licencias|保存とモデルライセンス|Speicher und Modelllizenzen|Хранение и лицензии моделей|التخزين وتراخيص النماذج|存储与模型许可
+A capture fails or asks for review|La captura falla o pide revisión|キャプチャの失敗・要確認|Aufnahme schlägt fehl oder braucht Prüfung|Захват не удался или требует проверки|فشل الالتقاط أو طلب المراجعة|捕捉失败或要求检查
+The motion slides, floats, or looks noisy|El movimiento resbala, flota o tiembla|滑り・浮き・揺れがある|Bewegung rutscht, schwebt oder zittert|Движение скользит, парит или дрожит|الحركة تنزلق أو تطفو أو تهتز|动作滑动、漂浮或抖动
+A project or export is missing|Falta un proyecto o una exportación|プロジェクトや書き出しが見つからない|Projekt oder Export fehlt|Пропал проект или экспорт|مشروع أو ملف تصدير مفقود|项目或导出文件丢失
+The page or preview does not load|La página o vista previa no carga|ページやプレビューが開かない|Seite oder Vorschau lädt nicht|Страница или просмотр не загружается|الصفحة أو المعاينة لا تعمل|页面或预览无法加载

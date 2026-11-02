@@ -1,0 +1,7 @@
+node_modules
+dist
+data
+public
+tests/fixtures
+test-results
+package-lock.json

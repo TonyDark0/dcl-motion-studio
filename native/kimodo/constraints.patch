@@ -1,0 +1,175 @@
+diff --git a/include/kimodo/kimodo.hpp b/include/kimodo/kimodo.hpp
+index e774e5a..d3f0cdd 100644
+--- a/include/kimodo/kimodo.hpp
++++ b/include/kimodo/kimodo.hpp
+@@ -20,6 +20,7 @@ struct motion_data {
+     unsigned joints = 0;
+     std::vector<float> local_rotations_xyzw;
+     std::vector<float> root_positions;
++    std::vector<float> smooth_root_positions;
+ };
+ 
+ struct prompt_segment {
+@@ -34,7 +35,14 @@ public:
+     std::expected<motion_data, std::string> generate_embedding(
+         const std::array<float, embedding_width> &embedding,
+         unsigned frames, unsigned steps, std::uint64_t seed,
+-        float text_cfg, float constraint_cfg) const;
++        float text_cfg, float constraint_cfg,
++        std::span<const float> observed = {}, std::span<const float> mask = {},
++        float first_heading = 0.F) const;
++    // DCL extension: unnormalized upstream motion features and binary masks.
++    std::expected<motion_data, std::string> generate_text_constrained(
++        std::string_view prompt, unsigned frames, unsigned steps, std::uint64_t seed,
++        std::span<const float> observed, std::span<const float> mask,
++        float first_heading) const;
+     std::expected<motion_data, std::string> generate_text(
+         std::string_view utf8_prompt, unsigned frames, unsigned steps, std::uint64_t seed,
+         float text_cfg, float constraint_cfg) const;
+diff --git a/src/generate.cpp b/src/generate.cpp
+index 132f88e..97eb483 100644
+--- a/src/generate.cpp
++++ b/src/generate.cpp
+@@ -25,6 +25,17 @@ void write_motion(const std::filesystem::path &output, const kimodo::motion_data
+     std::filesystem::create_directories(output);
+     write_f32(output / "root_positions.f32", motion.root_positions);
+     write_f32(output / "local_rotations_xyzw.f32", motion.local_rotations_xyzw);
++    write_f32(output / "smooth_root_positions.f32", motion.smooth_root_positions);
++}
++
++std::vector<float> read_condition(const std::string &path, size_t values) {
++    std::ifstream input(path, std::ios::binary | std::ios::ate);
++    if (!input || input.tellg()!=static_cast<std::streamoff>(values*sizeof(float)))
++        throw std::runtime_error("invalid constraint buffer size");
++    std::vector<float> result(values);
++    input.seekg(0); input.read(reinterpret_cast<char*>(result.data()),static_cast<std::streamsize>(values*sizeof(float)));
++    if (!input) throw std::runtime_error("cannot read constraint buffer");
++    return result;
+ }
+ 
+ std::vector<std::string> split_fields(const std::string &line) {
+@@ -42,6 +53,9 @@ std::string protocol_error(std::string message) {
+ }
+ 
+ int main(int argc, char **argv) try {
++    if (argc==2 && std::string_view(argv[1])=="--capabilities") {
++        std::cout << "{\"constraints\":\"soma30-v1\",\"protocol\":\"C1\"}\n"; return 0;
++    }
+     if (argc == 4 && std::string_view(argv[1]) == "--server") {
+         auto model = kimodo::model::load(argv[2], argv[3]);
+         if (!model) throw std::runtime_error(model.error());
+@@ -49,6 +63,21 @@ int main(int argc, char **argv) try {
+         while (std::getline(std::cin, line)) {
+             try {
+                 const auto fields = split_fields(line);
++                if (!fields.empty() && fields[0]=="C1") {
++                    if (fields.size()!=9) throw std::runtime_error("invalid C1 request");
++                    const auto frames=static_cast<unsigned>(std::stoul(fields[4]));
++                    if(frames<2 || frames>300) throw std::runtime_error("constraint frames must be 2..300");
++                    auto observed=read_condition(fields[7],static_cast<size_t>(frames)*369);
++                    auto mask=read_condition(fields[8],observed.size());
++                    std::ifstream file(fields[5]);
++                    const std::string prompt{std::istreambuf_iterator<char>(file), {}};
++                    if (prompt.empty()) throw std::runtime_error("cannot read constraint prompt");
++                    auto motion=(*model)->generate_text_constrained(prompt,frames,static_cast<unsigned>(std::stoul(fields[1])),std::stoull(fields[2]),observed,mask,std::stof(fields[6]));
++                    if(!motion) throw std::runtime_error(motion.error());
++                    write_motion(fields[3],*motion);
++                    std::cout << "OK\t" << motion->frames << '\t' << motion->joints << '\n' << std::flush;
++                    continue;
++                }
+                 if (fields.size() < 6 || (fields.size() - 4) % 2 != 0)
+                     throw std::runtime_error("invalid server request");
+                 const auto transition = static_cast<unsigned>(std::stoul(fields[0]));
+diff --git a/src/model.cpp b/src/model.cpp
+index 91d2ec0..d510a3a 100644
+--- a/src/model.cpp
++++ b/src/model.cpp
+@@ -66,11 +66,18 @@ std::expected<motion_data, std::string> model::generate_text(
+ 
+ std::expected<motion_data, std::string> model::generate_embedding(
+     const std::array<float, embedding_width> &embedding, unsigned frames, unsigned steps,
+-    std::uint64_t seed, float text_cfg, float constraint_cfg) const {
++    std::uint64_t seed, float text_cfg, float constraint_cfg,
++    std::span<const float> observed, std::span<const float> mask, float first_heading) const {
+     if (frames == 0 || frames > 10000) return std::unexpected("frames must be in 1..10000");
+     if (steps == 0 || steps > 1000) return std::unexpected("diffusion_steps must be in 1..1000");
+     if (!std::isfinite(text_cfg) || !std::isfinite(constraint_cfg)) return std::unexpected("CFG weights must be finite");
+     for (float value : embedding) if (!std::isfinite(value)) return std::unexpected("embedding contains a non-finite value");
++    const bool conditioned = !observed.empty() || !mask.empty();
++    if (!std::isfinite(first_heading)) return std::unexpected("non-finite heading");
++    if (conditioned && (observed.size()!=static_cast<size_t>(frames)*impl_->skeleton->motion_dim() || mask.size()!=observed.size()))
++        return std::unexpected("invalid constraint dimensions");
++    for (float value : observed) if (!std::isfinite(value)) return std::unexpected("non-finite constraint");
++    for (float value : mask) if (value!=0.F && value!=1.F) return std::unexpected("constraint masks must be binary");
+ #ifdef KIMODO_HAVE_GGML
+     const std::lock_guard inference_lock(impl_->inference_mutex);
+     const auto generate_started = std::chrono::steady_clock::now();
+@@ -90,16 +97,25 @@ std::expected<motion_data, std::string> model::generate_embedding(
+     const size_t motion_dim=impl_->skeleton->motion_dim();
+     std::vector<float> noise(static_cast<size_t>(frames)*motion_dim);
+     for (float &value : noise) value = normal(rng);
+-    const auto sampling_started = std::chrono::steady_clock::now();
+-    auto sampled = detail::sample_motion_from_noise(*impl_->weights, noise, embedding, frames, steps, text_cfg, constraint_cfg);
+-    if (!sampled) return std::unexpected(sampled.error());
+-    const double sampling_ms = detail::profile_elapsed_ms(sampling_started);
+     auto global_mean=impl_->weights->f32_values("stats.global_root.mean"), global_std=impl_->weights->f32_values("stats.global_root.std");
+     auto body_mean=impl_->weights->f32_values("stats.body.mean"), body_std=impl_->weights->f32_values("stats.body.std");
+     if (!global_mean) return std::unexpected(global_mean.error());
+     if (!global_std) return std::unexpected(global_std.error());
+     if (!body_mean) return std::unexpected(body_mean.error());
+     if (!body_std) return std::unexpected(body_std.error());
++    std::vector<float> normalized(observed.begin(), observed.end());
++    for (size_t i=0;i<normalized.size();++i) {
++        const size_t d=i%motion_dim;
++        const float mean=d<5?(*global_mean)[d]:(*body_mean)[d-5];
++        const float stddev=d<5?(*global_std)[d]:(*body_std)[d-5];
++        normalized[i]=(normalized[i]-mean)/std::sqrt(stddev*stddev+1.e-5F);
++    }
++    const auto sampling_started = std::chrono::steady_clock::now();
++    auto sampled = conditioned
++        ? detail::sample_motion_from_noise_conditioned(*impl_->weights,noise,embedding,normalized,mask,first_heading,frames,steps,text_cfg,constraint_cfg)
++        : detail::sample_motion_from_noise(*impl_->weights,noise,embedding,frames,steps,text_cfg,constraint_cfg);
++    if (!sampled) return std::unexpected(sampled.error());
++    const double sampling_ms = detail::profile_elapsed_ms(sampling_started);
+     const auto decode_started = std::chrono::steady_clock::now();
+     auto decoded=detail::decode_motion(*sampled,frames,*impl_->skeleton,*global_mean,*global_std,*body_mean,*body_std);
+     if (!decoded) return std::unexpected(decoded.error());
+@@ -107,6 +123,9 @@ std::expected<motion_data, std::string> model::generate_embedding(
+     result.frames=frames; result.joints=static_cast<unsigned>(impl_->skeleton->joints());
+     result.local_rotations_xyzw=std::move(decoded->local_xyzw);
+     result.root_positions=std::move(decoded->root_positions);
++    result.smooth_root_positions.resize(static_cast<size_t>(frames)*3);
++    for(size_t t=0;t<frames;++t) for(size_t d=0;d<3;++d)
++        result.smooth_root_positions[t*3+d]=(*sampled)[t*motion_dim+d]*std::sqrt((*global_std)[d]*(*global_std)[d]+1.e-5F)+(*global_mean)[d];
+     if (detail::profile_enabled())
+         std::fprintf(stderr, "profile motion.generate sampling_ms=%.3f decode_ms=%.3f total_ms=%.3f\n",
+                      sampling_ms, detail::profile_elapsed_ms(decode_started),
+@@ -117,6 +136,19 @@ std::expected<motion_data, std::string> model::generate_embedding(
+ #endif
+ }
+ 
++std::expected<motion_data, std::string> model::generate_text_constrained(
++    std::string_view prompt,unsigned frames,unsigned steps,std::uint64_t seed,
++    std::span<const float> observed,std::span<const float> mask,float first_heading) const {
++#ifdef KIMODO_HAVE_GGML
++    if (!impl_->text) return std::unexpected("model was loaded without a native text bundle");
++    auto embedding=impl_->text->encode(prompt);
++    if (!embedding) return std::unexpected(embedding.error());
++    return generate_embedding(*embedding,frames,steps,seed,2.F,2.F,observed,mask,first_heading);
++#else
++    return std::unexpected("Kimodo was built without GGML support");
++#endif
++}
++
+ std::expected<motion_data, std::string> model::generate_text_sequence(
+     std::span<const prompt_segment> segments, unsigned transition_frames,
+     unsigned steps, std::uint64_t seed, float text_cfg, float constraint_cfg) const {
+@@ -174,6 +206,8 @@ std::expected<motion_data, std::string> model::generate_text_sequence(
+     if (!decoded) return std::unexpected(decoded.error());
+     motion_data result; result.frames=frames; result.joints=static_cast<unsigned>(impl_->skeleton->joints());
+     result.local_rotations_xyzw=std::move(decoded->local_xyzw); result.root_positions=std::move(decoded->root_positions);
++    result.smooth_root_positions.resize(static_cast<size_t>(frames)*3);
++    for(size_t t=0;t<frames;++t) std::copy_n(joined->data()+t*motion_dim,3,result.smooth_root_positions.data()+t*3);
+     return result;
+ #else
+     (void) segments; (void) transition_frames; (void) steps; (void) seed; (void) text_cfg; (void) constraint_cfg;

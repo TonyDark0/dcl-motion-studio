@@ -1,0 +1,67 @@
+[
+  {
+    "name": "@emotion/react",
+    "version": "11.14.0",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "@emotion/styled",
+    "version": "11.14.0",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "@fastify/static",
+    "version": "10.1.5",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "@mediapipe/tasks-vision",
+    "version": "0.10.32",
+    "declaredLicense": "Apache-2.0"
+  },
+  {
+    "name": "@mui/material",
+    "version": "5.16.0",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "decentraland-ui2",
+    "version": "3.23.3",
+    "declaredLicense": "Apache-2.0"
+  },
+  {
+    "name": "fastify",
+    "version": "5.12.5",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "onnxruntime-node",
+    "version": "1.23.2",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "react",
+    "version": "18.3.1",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "react-dom",
+    "version": "18.3.1",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "three",
+    "version": "0.180.0",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "zod",
+    "version": "4.6.5",
+    "declaredLicense": "MIT"
+  },
+  {
+    "name": "zustand",
+    "version": "5.0.15",
+    "declaredLicense": "MIT"
+  }
+]
