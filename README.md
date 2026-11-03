@@ -8,9 +8,25 @@ Create an avatar animation from a text description or reference video, adjust th
 
 The live demo is a separate hosted beta for testing without a local setup. Its availability depends on the beta campaign and available processing budget. It processes jobs on remote servers and has its own access/consent notice. The installation below runs the editor and inference on your computer; it does not deploy or connect to that demo.
 
+## Examples
+
+Recordings of the existing landing-page examples. Click a preview to open its MP4 recording.
+
+**Text to emote — prompt and animated avatar**
+
+[![Text prompt and generated avatar movement](docs/media/text-to-emote.gif)](docs/media/text-to-emote.mp4)
+
+**Video to emote — reference, tracking, Fast and Pro**
+
+[![Reference video compared with tracking and Fast/Pro avatar results](docs/media/video-comparison-1.gif)](docs/media/video-comparison-1.mp4)
+
+[Watch comparison 2](docs/media/video-comparison-2.mp4) · [Watch comparison 3](docs/media/video-comparison-3.mp4)
+
+These recordings show the published example results; they are not benchmarks or a guarantee for other inputs. [Recording details](docs/media/README.md).
+
 ## Before you install
 
-**This is a source release, not a one-click installation.** Before downloading several gigabytes of models, check that you or someone helping you can compile the native Kimodo engine with a C++ toolchain. npm does not do this for you. The [build guide](native/kimodo/README.md) explains the required tools and commands.
+This source distribution requires Node.js 24, model weights and a compiled Kimodo engine. Install the build tools listed below, compile the engine with the supplied patch, then configure its executable and model paths in Studio. The [native build guide](native/kimodo/README.md) describes the engine protocol and troubleshooting.
 
 **The base avatar is already included** at `public/assets/Avatar.glb`. You do not need to obtain another avatar or connect a wallet. A wallet avatar is an optional preview appearance only; exports always use our base avatar or its animated rig without meshes.
 
@@ -103,7 +119,15 @@ ffmpeg -version
 ffprobe -version
 ```
 
-Both commands must print version information. Then download the tracking and generation models:
+Both commands must print version information when installed on PATH. For an existing installation outside PATH, copy the optional configuration template:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Run this copy only when `.env` does not already exist. Open `.env` in a text editor, uncomment `FFMPEG_PATH` and `FFPROBE_PATH`, and replace the examples with the full paths to your executables. Both the API and setup scripts load this file. Variables already set in the terminal take precedence. Then rerun `npm run setup:video`; it should report that the tools are ready.
+
+Download the tracking and generation models:
 
 ```sh
 npm run setup:public

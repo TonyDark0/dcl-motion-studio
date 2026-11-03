@@ -33,10 +33,10 @@ export const chapters: DocChapter[] = [
           'The studio opens in Projects. Each project belongs to one workflow: Text to emote or Video to emote. Start a separate project to use the other workflow.',
         ],
         steps: [
-          'Open the studio with Create.',
+          'Open the local Studio address shown in the terminal.',
           'Select New project. Give it a name and choose your workflow.',
           'Select Create project. A new project starts in a T pose with an empty timeline.',
-          'The first time you enter the editor, enter a wallet to preview your Decentraland avatar, or choose Use default avatar instead. You can change this later in Settings.',
+          'Enter a public wallet address to preview a Decentraland avatar, or choose Use default avatar instead. Wallet import only changes the preview.',
         ],
         image: 'create-project.png',
         caption: 'The actual New project dialog: name your project and choose a workflow.',
@@ -50,7 +50,8 @@ export const chapters: DocChapter[] = [
           'Your wallet is only used to preview the avatar and its equipped wearables in the studio. You can continue with the default avatar and change your choice in Settings at any time.',
         ],
         image: 'avatar-onboarding.png',
-        caption: 'Choose a wallet preview or continue with the default avatar when you first open the editor.',
+        caption:
+          'Choose a wallet preview or continue with the default avatar when you first open the editor.',
         imageWidth: 1440,
         imageHeight: 1000,
       },
@@ -444,8 +445,8 @@ export const chapters: DocChapter[] = [
   {
     id: 'export',
     group: 'Edit and export',
-    title: 'Export and share feedback',
-    summary: 'Choose the correct file and help improve future results.',
+    title: 'Export',
+    summary: 'Export the animated rig or the base avatar with its animation.',
     sections: [
       {
         id: 'formats',
@@ -471,11 +472,10 @@ export const chapters: DocChapter[] = [
       },
       {
         id: 'feedback',
-        title: 'Rate a generation',
+        title: 'Report a problem',
         text: [
-          'Use Rate animation to score a generated clip and tell us what needs improvement.',
-          'By using the hosted demo, you agree that your generated animations, prompts, settings and ratings may be included in a dataset to improve the product. Source photos, videos and wallet addresses are excluded from that dataset. Local project storage may still contain references needed to reopen and edit a project.',
-          'This dataset is part of the demo’s product-improvement process. The planned fully local release will not require contributing your animations or ratings to this dataset.',
+          'Report bugs and motion-quality issues through the GitHub repository: https://github.com/TonyDark0/dcl-motion-studio/issues.',
+          'Include the workflow, operating system, hardware, reproduction steps and relevant error output. Remove tokens and private reference media before sharing. The local application does not submit generation ratings or collect a training dataset.',
         ],
       },
     ],
@@ -536,17 +536,17 @@ export const chapters: DocChapter[] = [
     sections: [
       {
         id: 'dataset',
-        title: 'Learn from real creations',
+        title: 'Evaluation and reference data',
         text: [
-          'The demo dataset will help us compare generated movement with user ratings, identify recurring failures and build better evaluation examples. Collecting data alone does not automatically train or improve a model; those changes must be tested.',
-          'Generated animations, prompts, settings and ratings are the intended inputs. Source photos, videos and wallet addresses are excluded. Dataset participation belongs to the hosted demo; it will not be required for fully local use.',
+          'Improving generation requires evaluation against clear reference movements and repeatable tests. This local distribution does not automatically upload prompts, animations or references for evaluation or training.',
+          'Any future shared evaluation dataset requires a separate contribution process and appropriate permissions for the material.',
         ],
       },
       {
         id: 'styles',
         title: 'Better creative starting points',
         text: [
-          'Style categories may return once we have enough varied, well-rated examples to evaluate them. The goal is useful guidance that supports your prompt without forcing unrelated movements or making every emote look alike.',
+          'Style templates are a possible future feature. They are not active generation presets in this release.',
         ],
       },
       {
@@ -560,9 +560,10 @@ export const chapters: DocChapter[] = [
       },
       {
         id: 'release',
-        title: 'A fully local release',
+        title: 'Source code and updates',
         text: [
-          'We plan to release the project on GitHub with setup instructions, hardware guidance and component-license information. The long-term goal is to create and edit on your own computer without a required cloud service or dataset contribution.',
+          'The local application source is available at https://github.com/TonyDark0/dcl-motion-studio. The repository README documents installation, model downloads, native compilation and first use.',
+          'Save your work and stop Studio before updating the source. Read the changes before replacing files or reinstalling dependencies; preserve the data directory and browser session used for your projects.',
         ],
       },
     ],
@@ -571,25 +572,32 @@ export const chapters: DocChapter[] = [
     id: 'setup',
     group: 'About the studio',
     title: 'Run locally',
-    summary: 'Built for fully local use, with a hybrid demo available during development.',
+    summary: 'Install the editor, native engine and models on your computer.',
     sections: [
       {
         id: 'start-local',
-        title: 'Local first, hybrid for this demo',
+        title: 'Install the local distribution',
         text: [
-          'The studio is designed to run entirely on your own computer. It brings together open-source tools and models, with each component retaining its own license and access requirements.',
-          'For now, the demo combines work in your browser with cloud processing so we can test the experience and improve the product. The project is planned for release on GitHub with fuller installation documentation.',
+          'This guide describes the local application. Generation and tracking run on your computer, and project data stays in this installation. The separately hosted beta has its own processing and access conditions.',
+          'Follow the repository README for the complete Windows x64 setup: https://github.com/TonyDark0/dcl-motion-studio#local-installation. It includes Node.js 24, Git, CMake, Ninja and the LLVM-MinGW compiler.',
+        ],
+        steps: [
+          'Install the build tools listed in the README and run npm ci in the Studio project folder.',
+          'Run npm run setup:video, npm run setup:public and npm run setup:models. The combined generation/tracking weights require about 6.6 GB, plus runtime files.',
+          'Compile the pinned Kimodo source with the Studio constraints patch. Keep the executable and required DLLs together in data/bin/kimodo-constraints/.',
+          'Start npm run dev and open http://127.0.0.1:5173. In Settings → Kimodo → Configure, save the full executable/model paths and select CPU before checking and activating Studio Constraints.',
+          'Create a text project, generate a short movement, preview it and export a GLB. This verifies model loading beyond the executable capability check.',
         ],
       },
       {
         id: 'models-local',
         title: 'Prepare inference separately',
         text: [
-          'npm run setup:models downloads the configured Kimodo and RTMW3D weights and checks the video tools. Downloads are several gigabytes; they are not included in the web app bundle.',
-          'The native Kimodo executable is also required. Configure its executable and motion/text model paths in Settings → Kimodo. Loop/image and hybrid video generation need the Studio constraints build; ordinary text-only inference is not enough for these features.',
+          'Run npm run setup:public to download the MediaPipe pose model, then npm run setup:models for the pinned Kimodo, text-encoder, tokenizer and RTMW3D files. The scripts verify downloads. Keep tokenizer.gguf beside the text encoder.',
+          'Compile the native Kimodo executable with the Studio constraints patch. In Settings → Kimodo → Configure, enter its full path and the SOMA/text-model paths, select CPU and save. Then check the installation and activate Studio Constraints.',
           'SAM 3D Body weights require accepting their license and authorized model access. Follow the setup script output; never put an access token in client code or public files.',
         ],
-        note: 'Local processing time depends mainly on your hardware. As a development reference, a laptop with an Intel Core i9-13980HX and NVIDIA GeForce RTX 4070 Laptop GPU processed a 5-second video in about 7 minutes in Pro or 1 minute in Fast, and generated 4 seconds of text-based motion in about 30 seconds. These are observed reference times, not guarantees. The hosted demo’s cloud configuration was chosen specifically for this MVP; its timings do not represent local performance or a final production service.',
+        note: 'Text generation and Fast capture support CPU execution. Pro requires its separate Python/PyTorch environment and a compatible NVIDIA GPU. Memory usage and processing time depend on the hardware, models and input; this release does not certify a universal minimum RAM or VRAM.',
       },
       {
         id: 'storage',
@@ -605,15 +613,14 @@ export const chapters: DocChapter[] = [
     id: 'help',
     group: 'About the studio',
     title: 'Troubleshooting',
-    summary:
-      'Checks for the current browser-and-cloud demo. A dedicated local troubleshooting guide will follow with the local release.',
+    summary: 'Diagnose local setup, tracking, generation and project-storage problems.',
     sections: [
       {
         id: 'tracking-errors',
         title: 'A capture fails or asks for review',
         text: [
           'Check that the person stays visible and choose a shorter segment with clear hands and feet. If a required pose is uncertain, inspect the first/last moments and use Review next issue. Correct visible points before accepting.',
-          'Check your internet connection and keep the tab open during processing. If a request fails, wait briefly and try again; the hosted service may be busy or temporarily unavailable. If the problem persists, note the capture mode, clip duration and visible error when reporting it.',
+          'Keep the terminal running Studio open and inspect its error output. Confirm that the local API is available, the engine/model paths are configured and the selected capture runtime is installed. Correct a tracking validation error before generating again; valid tracking cannot prevent every runtime or memory failure.',
         ],
       },
       {
@@ -628,7 +635,7 @@ export const chapters: DocChapter[] = [
         id: 'project-issues',
         title: 'A project or export is missing',
         text: [
-          'Return to Projects using the same browser profile and demo address. Private browsing, clearing site storage or switching browsers can disconnect you from your existing workspace; this demo does not yet provide email-based recovery.',
+          'Return to the same local Studio address using the same browser profile. Clearing cookies, switching between localhost and 127.0.0.1, or changing browsers can disconnect the browser session from its existing workspace. Preserve the installation data directory; a GLB export is not a backup of the editable project.',
           'Export needs at least one timeline clip. Remove or shorten clips that exceed 10 seconds, and check the animation in the Builder after exporting. A custom wallet avatar is only used for preview.',
         ],
       },
@@ -636,12 +643,12 @@ export const chapters: DocChapter[] = [
         id: 'browser',
         title: 'The page or preview does not load',
         steps: [
-          'Try a current browser with hardware acceleration and WebGL enabled. Close other heavy tabs if the preview is slow.',
-          'Save your project before refreshing. Check your connection and reload the page to fetch the latest interface.',
-          'If an update seems stuck, try a hard refresh that bypasses cached files. Do not clear cookies or site storage as a first step: this demo uses your browser session to identify your workspace.',
-          'If a privacy extension blocks a request, check its site permissions. Retry later if the cloud service is unavailable.',
+          'Keep npm run dev running and open http://127.0.0.1:5173, or use npm start after building and open http://127.0.0.1:8787. Stop the previous mode before switching.',
+          'Use a browser with hardware acceleration and WebGL enabled. Close other heavy tabs if the preview is slow.',
+          'Check the terminal for startup errors or ports already in use. An available API does not mean the native engine and model paths are configured.',
+          'Save your work before refreshing. Do not clear cookies or site storage as a first troubleshooting step; the local workspace uses a browser session.',
         ],
-        note: 'Local installation and model-setup troubleshooting will be added with the future GitHub release.',
+        note: 'For installation diagnostics and model paths, use README.md and docs/TROUBLESHOOTING.md in the repository. Model downloads and optional wallet-avatar loading need Internet; local inference does not require a cloud account.',
       },
     ],
   },

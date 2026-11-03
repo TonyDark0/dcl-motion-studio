@@ -1,3 +1,4 @@
+import './setup-env.mjs';
 import { createHash } from 'node:crypto';
 import { createReadStream, createWriteStream, existsSync, mkdirSync, statSync } from 'node:fs';
 import { rename, unlink } from 'node:fs/promises';

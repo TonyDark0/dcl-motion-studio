@@ -1,3 +1,4 @@
+import './setup-env.mjs';
 import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile, rename } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -14,7 +15,9 @@ try {
   if (error.code !== 'ENOENT') throw error;
 }
 console.log('Downloading MediaPipe Pose Landmarker Full. Review its model terms before use.');
-const response = await fetch('https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/1/pose_landmarker_full.task');
+const response = await fetch(
+  'https://storage.googleapis.com/mediapipe-models/pose_landmarker/pose_landmarker_full/float16/1/pose_landmarker_full.task',
+);
 if (!response.ok) throw Error(`Download failed: HTTP ${response.status}`);
 const bytes = Buffer.from(await response.arrayBuffer());
 if (digest(bytes) !== expected) throw Error('Model SHA-256 mismatch; no file installed.');

@@ -1,3 +1,4 @@
+import './setup-env.mjs';
 import { spawnSync } from 'node:child_process';
 
 function ready() {

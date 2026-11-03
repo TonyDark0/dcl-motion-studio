@@ -7,7 +7,7 @@ It does not install the official PyTorch inference stack or require cloud servic
 
 This is the developer step of local installation. npm does not compile this engine. You need Git, CMake, Ninja and a working C++23 compiler environment. On Windows, the compiler and its runtime libraries must match; mixing binaries from unrelated toolchains is not a supported setup. This source package does not include a prebuilt engine or a compiler installer.
 
-If those tools are unfamiliar, get help with this step or use the hosted beta first. These commands do not install the toolchain.
+Install and configure the Windows build tools listed in the [installation guide](../../README.md#1-open-the-project-and-check-nodejs) before running these commands. The README includes a concrete LLVM-MinGW setup and runtime-library copy commands.
 
 ### 1. Check the tools
 

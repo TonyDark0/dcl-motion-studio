@@ -29,3 +29,7 @@ Los paquetes transitivos y sus avisos se conservan mediante npm y `package-lock.
 ## Alcance de la licencia de Studio
 
 El código original se ofrece bajo Apache-2.0; ver LICENSE y NOTICE. Los pesos y los componentes externos no se relicencian. Built with Meta Llama 3. La matriz revisada de modelos y datos y requisitos DCL está en [docs/LICENSING.md](docs/LICENSING.md).
+
+## Grabaciones de demostración
+
+Los archivos de docs/media registran ejemplos ya existentes de la landing. Se incluyen como documentación por solicitud del propietario; no son modelos, dependencias de ejecución ni datos de entrenamiento. El código de la landing y los GLB de esos ejemplos siguen separados. Véase docs/media/README.md para el alcance; la licencia Apache del código no sustituye los derechos sobre referencias de vídeo o recursos representados.

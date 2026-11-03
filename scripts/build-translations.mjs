@@ -14,4 +14,6 @@ for (const file of readdirSync('src/locales').filter((f) => f.endsWith('.tsv')))
     });
   }
 }
+const overrides = JSON.parse(readFileSync('src/locales/local-docs.json', 'utf8'));
+for (const id of languages) Object.assign(out[id], overrides[id] || {});
 writeFileSync('src/locales/messages.json', JSON.stringify(out, null, 2) + '\n');

@@ -18,3 +18,7 @@ The guide is lazy-loaded separately from the editor. It supports chapter navigat
 Describe the controls and limits exposed by this distribution. Identify illustrations as illustrations, and use screenshots from the real interface for UI instructions. Keep model names, installation steps and local/remote processing claims aligned with source behavior.
 
 Capture utilities are developer tools, not part of first installation. They require a running editor and suitable local example projects/media; those private inputs are not bundled. They should not be presented as commands that work on a fresh checkout without assets.
+
+## Language editions
+
+All language editions preserve paragraph, step, table and note structure. Translation uses individual source strings; when a translation is unavailable, that field keeps its current English text rather than replacing the section with a shortened or outdated summary. Complete source instructions remain available in every edition. Local documentation overrides live in src/locales/local-docs.json and are included by the translation build script.

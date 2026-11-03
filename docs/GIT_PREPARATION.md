@@ -55,3 +55,11 @@ Por instrucción del propietario, public/assets/Avatar.glb forma parte del repos
 ## Revisión de instalación y modelos
 
 Se añadió MODELS_AND_RUNTIMES.md con la función, ubicación y comando de instalación de cada componente, requisitos CPU/GPU y límites de verificación. Se corrigió la detección de Python 3.11 del instalador Pro cuando ya existe un launcher de otra versión, con reinicio explícito de terminal después de instalar. MoGe dejó de descargarse desde main y usa una revisión fija comprobada en el proveedor. Estos cambios del instalador Pro se revisaron estáticamente; no se instalaron su entorno ni checkpoints durante la auditoría.
+
+## Actualización de ayuda local y ejemplos
+
+La ayuda integrada /docs se actualizó para describir el código local ya publicado, sin anuncios de una publicación futura ni instrucciones de valoraciones/dataset del demo. Las traducciones conservan pasos, tablas y notas; campos sin traducción usan el original inglés vigente. Las correcciones de texto local tienen una fuente persistente en local-docs.json para que el build no las sobrescriba. Los instaladores Node cargan el .env del proyecto y conservan la prioridad de variables del proceso.
+
+Se incluyeron cuatro grabaciones de los ejemplos existentes de la landing en docs/media, con vistas previas para el README. Son recursos de documentación; no se incorporaron la landing, sus dependencias ni nuevos trabajos de inferencia.
+
+Validación de esta actualización: build local aprobado; 169 pruebas aprobadas en 30 archivos, incluidas regresiones de estructura documental para los siete idiomas y carga/herencia de .env. Comprobación en navegador de /docs en inglés y español: cinco pasos de instalación y tabla de modelos conservados. No se ejecutó inferencia nueva ni se redeplegó la web alojada.
