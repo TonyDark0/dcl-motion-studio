@@ -8,11 +8,6 @@ $RuntimeRoot = Join-Path $ProjectRoot 'data\runtime\vision'
 $VendorRoot = Join-Path $RuntimeRoot 'vendor'
 $VenvRoot = Join-Path $RuntimeRoot '.venv'
 $PythonExe = Join-Path $VenvRoot 'Scripts\python.exe'
-$SamRoot = Join-Path $ProjectRoot 'data\models\vision\sam-3d-body-dinov3'
-$SamReady = (Test-Path (Join-Path $SamRoot 'model.ckpt')) -and
-  (Test-Path (Join-Path $SamRoot 'model_config.yaml')) -and
-  (Test-Path (Join-Path $SamRoot 'assets\mhr_model.pt'))
-
 function Invoke-Checked {
   param([string]$Program, [string[]]$Arguments)
   & $Program @Arguments
@@ -20,6 +15,10 @@ function Invoke-Checked {
 }
 
 function Download-Models {
+  $Downloader = Join-Path $PSScriptRoot 'download-pro-models.py'
+  & $PythonExe $Downloader $ProjectRoot --check-sam
+  if ($LASTEXITCODE -notin @(0, 1)) { throw 'Could not verify the installed SAM files.' }
+  $SamReady = $LASTEXITCODE -eq 0
   $enteredHere = $false
   if (-not $SamReady -and $env:HF_TOKEN -notmatch '^hf_[A-Za-z0-9]{20,}$') {
     Write-Host 'Paste the complete Hugging Face token when prompted. The stars hide its characters.'
@@ -31,7 +30,7 @@ function Download-Models {
     if (-not $SamReady -and $env:HF_TOKEN -notmatch '^hf_[A-Za-z0-9]{20,}$') {
       throw 'The token is incomplete. Copy the full token from Hugging Face and paste it at the prompt. It begins with hf_ and is much longer than one character.'
     }
-    Invoke-Checked -Program $PythonExe -Arguments @((Join-Path $PSScriptRoot 'download-pro-models.py'), $ProjectRoot)
+    Invoke-Checked -Program $PythonExe -Arguments @($Downloader, $ProjectRoot)
   } finally {
     if ($enteredHere) { Remove-Item Env:HF_TOKEN -ErrorAction SilentlyContinue }
   }

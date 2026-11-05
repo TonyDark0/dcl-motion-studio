@@ -44,7 +44,7 @@ See [Pro capture](pro-capture-pipeline.md) for processing details. A successful 
 
 ## Verification and offline use
 
-The basic download scripts pin model revisions and check file sizes/SHA-256 where defined. Their exact URLs and hashes are in [setup-models.mjs](../scripts/setup-models.mjs) and [setup-public-assets.mjs](../scripts/setup-public-assets.mjs). Pro uses pinned provider revisions; it does not use the same explicit SHA-256 manifest as the basic installer.
+The basic download scripts pin model revisions and check file sizes/SHA-256 where defined. Their exact URLs and hashes are in [setup-models.mjs](../scripts/setup-models.mjs) and [setup-public-assets.mjs](../scripts/setup-public-assets.mjs). Pro uses pinned provider revisions and its own [size and SHA-256 manifest](../scripts/pro-models.json). The installer checks both new and existing files. This is an installation check, not verification on every inference run.
 
 1. Check the expected files exist and each setup command completed successfully.
 2. Run the native engine with `--capabilities`; expect `constraints: soma30-v1` and `protocol: C1`.

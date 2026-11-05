@@ -287,7 +287,7 @@ This installs a separate environment and additional models. SAM 3D Body requires
 
 For the optional SAM download, sign in to [its model page](https://huggingface.co/facebook/sam-3d-body-dinov3), review/accept the access conditions and obtain approved access. Use a Hugging Face read token authorized to download that model when the installer prompts for it. This is access to an external model provider, not a Studio account. If access is denied, continue using Fast and resolve the provider access separately.
 
-If the runtime is already installed and only the checkpoint download needs retrying, use `npm run setup:pro:models`. Pro is optional: CPU text generation and Fast capture do not require it.
+The Pro installer verifies model size and SHA-256 against [the pinned manifest](scripts/pro-models.json) before installing or reusing files. If the runtime is already installed, use `npm run setup:pro:models` to verify or retry the model installation. Pro is optional: CPU text generation and Fast capture do not require it.
 
 ## When something does not work
 
@@ -337,6 +337,7 @@ End-to-end and model-dependent tests require their documented assets, browser in
 - [Documentation map: workflows, internals and proposals](docs/README.md)
 - [Your first animation: step-by-step use](docs/GETTING_STARTED.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [Local security review and independent installation milestone](docs/SECURITY_REVIEW.md)
 - [Online user documentation](https://dclmotionstudio.xyz/docs)
 - [Hosted live beta — try before installing](https://dclmotionstudio.xyz/app)
 - [Project website and examples](https://dclmotionstudio.xyz/)

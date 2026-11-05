@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { videoEncodeArgs } from '../server/video-media';
+import { VIDEO_UPLOAD_LIMIT, videoEncodeArgs } from '../server/video-media';
 import { samObservation } from '../src/sam-observation';
 import Fastify from 'fastify';
 import { execFileSync } from 'node:child_process';
@@ -18,6 +18,26 @@ describe('tracking video preparation', () => {
       const app = Fastify();
       registerVideoMedia(app, root, { temporaryRoot: path.join(directory, 'scratch') });
       try {
+        if (mode === 'fast') {
+          const url = '/api/media/prepare?start=0&duration=2&mode=fast';
+          const malformed = await app.inject({
+            method: 'POST',
+            url,
+            headers: { 'content-type': 'application/octet-stream' },
+            payload: Buffer.from('not a video'),
+          });
+          expect(malformed.statusCode).toBe(422);
+          const oversized = await app.inject({
+            method: 'POST',
+            url,
+            headers: {
+              'content-type': 'application/octet-stream',
+              'content-length': String(VIDEO_UPLOAD_LIMIT + 1),
+            },
+            payload: Buffer.from([0]),
+          });
+          expect(oversized.statusCode).toBe(413);
+        }
         const source = execFileSync('ffmpeg', [
           '-hide_banner',
           '-loglevel',

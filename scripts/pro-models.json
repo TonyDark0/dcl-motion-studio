@@ -1,0 +1,20 @@
+{
+  "sam": {
+    "repo": "facebook/sam-3d-body-dinov3",
+    "revision": "11aaa346c7204874a1cbafe3d39a979080b2c55a",
+    "directory": "sam-3d-body-dinov3",
+    "files": {
+      "model_config.yaml": {"size": 1488, "sha256": "1012fc3f39cb5e90e3f8fbadf7bded31604bfafdce0321d17a7c1a2d3f08b88d"},
+      "model.ckpt": {"size": 2109129346, "sha256": "b5a2f9d305dd02626b967aa2e86021fba07065df66ce7a7e00ffb9664f150abf"},
+      "assets/mhr_model.pt": {"size": 696110248, "sha256": "352e271a6c42729c68554ceaea0c955e866970160c31e35506d782dc0f7377bc"}
+    }
+  },
+  "moge": {
+    "repo": "Ruicheng/moge-2-vits-normal",
+    "revision": "26b477f41595707c5db6770294c0d1721e8ed4ed",
+    "directory": "moge-2-vits-normal",
+    "files": {
+      "model.pt": {"size": 140550416, "sha256": "79a16621928c2bf0ed04659218c55c01075e950507f40bb3332fb4c873d3e1dc"}
+    }
+  }
+}
